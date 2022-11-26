@@ -44,7 +44,7 @@ public class OliveGrove {
     private List<Enum> varietyTrees;
 
     @Column(name = "type_of_soil")
-    private Enum<TypeOfSoil> typeOfSoil;
+    private TypeOfSoil typeOfSoil;
 
     @Column(name = "fertilization_product")
     private List<String> fertilizationProduct;
@@ -56,7 +56,7 @@ public class OliveGrove {
     private boolean pesticideSprays;
 
     @Column(name = "type")
-    private Enum<TypeOfOlive> type;
+    private TypeOfOlive type;
 
     @Column(name = "irrigation")
     private boolean irrigation;

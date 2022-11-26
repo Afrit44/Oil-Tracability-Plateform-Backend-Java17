@@ -1,6 +1,5 @@
 package com.Oil4Med.Oil4Med.Model;
 
-import com.Oil4Med.Oil4Med.Model.Types.StorageArea;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,7 @@
 package com.Oil4Med.Oil4Med.Model;
 
-import com.Oil4Med.Oil4Med.Model.Types.Person;
+import com.Oil4Med.Oil4Med.Model.Enum.Buyer;
+import com.Oil4Med.Oil4Med.Model.Enum.Seller;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,10 +26,10 @@ public class PurchaseOil {
     private Long sellerId;
 
     @Column(name = "seller_type")
-    private Person buyerType;
+    private Buyer buyerType;
 
     @Column(name = "seller_type")
-    private Person sellerType;
+    private Seller sellerType;
 
     @Column(name = "bottled")
     private boolean bottled;

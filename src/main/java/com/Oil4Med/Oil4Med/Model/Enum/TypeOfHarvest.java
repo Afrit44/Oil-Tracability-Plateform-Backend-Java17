@@ -1,6 +1,7 @@
 package com.Oil4Med.Oil4Med.Model.Enum;
 
 public enum TypeOfHarvest {
-    Mechanical,
-    Manual
+    ExtraVirgin,
+    Virgin,
+    Pomace
 }

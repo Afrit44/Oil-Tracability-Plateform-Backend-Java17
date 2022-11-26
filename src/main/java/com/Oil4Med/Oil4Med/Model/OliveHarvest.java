@@ -2,7 +2,7 @@ package com.Oil4Med.Oil4Med.Model;
 
 import com.Oil4Med.Oil4Med.Model.Enum.OliveMaturity;
 import com.Oil4Med.Oil4Med.Model.Enum.State;
-import com.Oil4Med.Oil4Med.Model.Enum.TypeOfHarvest;
+import com.Oil4Med.Oil4Med.Model.Enum.MethodOfHarvest;
 import com.Oil4Med.Oil4Med.Model.Enum.TypeOfPackaging;
 import com.Oil4Med.Oil4Med.Model.Types.Address;
 import jakarta.persistence.*;
@@ -31,7 +31,7 @@ public class OliveHarvest {
     private Date harvestingDate;
 
     @Column(name = "harvest_type")
-    private TypeOfHarvest harvestType;
+    private MethodOfHarvest harvestType;
 
     @Column(name = "maturity")
     private OliveMaturity maturity;

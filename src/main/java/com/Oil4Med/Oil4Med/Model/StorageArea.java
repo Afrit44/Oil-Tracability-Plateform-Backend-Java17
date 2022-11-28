@@ -33,10 +33,10 @@ public class StorageArea {
     private LocalType localType;
 
     @Column(name = "temperature")
-    private HashMap<Date,float> temperature;
+    private HashMap<Date,Float> temperature;
 
     @Column(name = "humidity")
-    private HashMap<Date,float> humidity;
+    private HashMap<Date,Float> humidity;
 
     @Column(name = "address")
     private Address address;

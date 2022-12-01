@@ -63,6 +63,7 @@ public class OliveHarvest {
     @Column(name = "state")
     private State state;
 
+    @Embedded
     @Column(name = "owner_address")
     private Address address;
 

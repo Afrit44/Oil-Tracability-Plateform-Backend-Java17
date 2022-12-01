@@ -18,6 +18,7 @@ public class Mill {
     @Column(name = "mill_id", nullable = false)
     private Long millId;
 
+    @Embedded
     @Column(name = "address")
     private Address address;
 

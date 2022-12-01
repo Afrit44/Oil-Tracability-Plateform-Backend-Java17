@@ -38,6 +38,7 @@ public class StorageArea {
     @Column(name = "humidity")
     private HashMap<Date,Float> humidity;
 
+    @Embedded
     @Column(name = "address")
     private Address address;
 }

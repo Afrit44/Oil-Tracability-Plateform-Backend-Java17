@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -60,4 +62,18 @@ public class Mill {
 
     @Column(name = "cleaning_products")
     private String cleaningProducts;
+
+    @ManyToOne
+    @JoinColumn(name="admin_id")
+    private Admin admin;
+
+    @OneToMany
+    private List<PurchaseHarvest> purchaseHarvestList;
+
+    @OneToOne
+    private MillAgreement millAgreement;
+
+    @OneToMany
+    @JoinColumn(name="machines_id")
+    private List<Machine> machines;
 }

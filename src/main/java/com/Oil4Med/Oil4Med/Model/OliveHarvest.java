@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -69,5 +70,14 @@ public class OliveHarvest {
 
     @Column(name = "extraction_id")
     private Long extractionId;
+
+    @OneToOne
+    private OliveGrove oliveGrove;
+
+    @OneToMany
+    private List<OliveSupplyForExtraction> oliveSupplyForExtractionList;
+
+    @OneToOne
+    private PurchaseHarvest purchaseHarvest;
 
 }

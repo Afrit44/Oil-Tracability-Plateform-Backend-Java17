@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -19,4 +21,10 @@ public class Machine {
 
     @Column(name = "mill_id", nullable = false)
     private Long millId;
+
+    @ManyToMany
+    private List<Extraction> extrations;
+
+    @ManyToOne
+    private Mill mill;
 }

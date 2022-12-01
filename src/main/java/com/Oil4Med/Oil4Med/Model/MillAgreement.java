@@ -48,4 +48,11 @@ public class MillAgreement {
 
     @Column(name = "storage_area")
     private StorageArea storageArea;
+
+    @OneToOne
+    private Farmer farmer;
+
+    @OneToOne
+    @JoinColumn(name="mill_id")
+    private Mill mill;
 }

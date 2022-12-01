@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -16,5 +18,14 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "admin_id", nullable = false)
     private Long adminId;
+
+    @OneToMany(mappedBy = "admin")
+    private List<Farmer> farmers;
+
+    @OneToMany
+    private List<Consumer> consumers;
+
+    @OneToMany
+    private List<Mill> mills;
 
 }

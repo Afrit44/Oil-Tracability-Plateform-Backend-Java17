@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -31,4 +32,11 @@ public class OilPackage {
 
     @Column(name = "matricule")
     private String matricule;
+
+    @ManyToOne
+    @JoinColumn(name="unpakced_oil_id")
+    private UnpackedOil unpackedOil;
+
+    @OneToMany
+    private List<StorageArea> storageAreas;
 }

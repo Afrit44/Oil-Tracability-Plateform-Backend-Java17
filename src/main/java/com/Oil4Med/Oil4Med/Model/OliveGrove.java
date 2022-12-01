@@ -60,4 +60,12 @@ public class OliveGrove {
 
     @Column(name = "irrigation")
     private boolean irrigation;
+
+    @ManyToOne
+    @JoinColumn(name="farmer_id")
+    private Farmer farmer;
+
+    @OneToOne
+    @JoinColumn(name="olive_harvest_id")
+    private OliveHarvest oliveHarvest;
 }

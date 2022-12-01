@@ -25,4 +25,11 @@ public class PurchaseHarvest {
 
     @Column(name = "quantity")
     private double quantity;
+
+    @ManyToOne
+    private Mill mill;
+
+    @OneToOne
+    @JoinColumn(name="olive_harvest_id")
+    private OliveHarvest oliveHarvest;
 }

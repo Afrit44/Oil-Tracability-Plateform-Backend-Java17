@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -37,4 +38,14 @@ public class Extraction {
 
     @Column(name = "finish_date")
     private Date finishDate;
+
+    @OneToMany
+    private List<OliveSupplyForExtraction> oliveSupplyForExtractionList;
+
+    @ManyToMany
+    @JoinColumn(name="machines_id")
+    private List<Machine> machines;
+
+    @OneToOne
+    private ProductionBatch productionBatch;
 }

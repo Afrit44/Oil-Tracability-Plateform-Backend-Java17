@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -18,6 +20,13 @@ public class Consumer {
 
     @Column(name="name")
     private String name;
+
+    @OneToMany
+    private List<PurchaseOil> purchaseOilList;
+
+    @ManyToOne
+    @JoinColumn(name="admin_id")
+    private Admin admin;
 
 }
 

@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -37,4 +39,14 @@ public class PurchaseOil {
     @Column(name = "quantity")
     private double quantity;
 
+    @ManyToOne
+    @JoinColumn(name="storage_area_id")
+    private StorageArea storageArea;
+
+    @ManyToOne
+    @JoinColumn(name="consumer_id")
+    private Consumer consumer;
+
+    @OneToMany
+    private List<UnpackedOil> unpackedOilList;
 }

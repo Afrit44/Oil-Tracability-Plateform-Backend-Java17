@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -33,5 +34,16 @@ public class UnpackedOil {
 
     @Column(name = "owner_id", nullable = false)
     private Long ownerId;
+
+    @ManyToOne
+    @JoinColumn(name="production_batch_id")
+    private ProductionBatch productionBatch;
+
+    @OneToMany
+    private List<OilPackage> oilPackageList;
+
+    @ManyToOne
+    @JoinColumn(name="pucharse_oil_id")
+    private PurchaseOil purchaseOil;
 
 }

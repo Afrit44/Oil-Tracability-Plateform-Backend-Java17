@@ -26,4 +26,12 @@ public class OliveSupplyForExtraction {
 
     @Column(name = "extractionType")
     private ExtractionType extractionType;
+
+    @ManyToOne
+    @JoinColumn(name="olive_harvest_id")
+    private OliveHarvest oliveHarvest;
+
+    @ManyToOne
+    @JoinColumn(name="extraction_id")
+    private Extraction extraction;
 }

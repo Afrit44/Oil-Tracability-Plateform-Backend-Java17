@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -52,4 +53,11 @@ public class ProductionBatch {
 
     @Column(name = "owner")
     private Owner owner;
+
+    @OneToOne
+    @JoinColumn(name="extraction_id")
+    private Extraction extraction;
+
+    @OneToMany
+    private List<UnpackedOil> unpackedOilList;
 }

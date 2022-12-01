@@ -41,4 +41,11 @@ public class StorageArea {
     @Embedded
     @Column(name = "address")
     private Address address;
+
+    @ManyToOne
+    @JoinColumn(name="oil_package_id")
+    private OilPackage oilPackage;
+
+    @OneToMany
+    private List<PurchaseOil> purchaseOilList;
 }

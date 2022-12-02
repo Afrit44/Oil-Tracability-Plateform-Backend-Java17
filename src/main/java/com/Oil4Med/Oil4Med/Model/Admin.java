@@ -19,13 +19,13 @@ public class Admin {
     @Column(name = "admin_id", nullable = false)
     private Long adminId;
 
-    @OneToMany(mappedBy = "admin")
-    private List<Farmer> farmers;
+    @OneToMany(mappedBy = "admin",cascade = CascadeType.ALL)
+    private List<Farmer> farmersCreated;
 
-    @OneToMany
-    private List<Consumer> consumers;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Consumer> consumersCreated;
 
-    @OneToMany
-    private List<Mill> mills;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Mill> millsCreated;
 
 }

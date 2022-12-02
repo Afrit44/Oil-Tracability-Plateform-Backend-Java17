@@ -71,13 +71,13 @@ public class OliveHarvest {
     @Column(name = "extraction_id")
     private Long extractionId;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private OliveGrove oliveGrove;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<OliveSupplyForExtraction> oliveSupplyForExtractionList;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PurchaseHarvest purchaseHarvest;
 
 }

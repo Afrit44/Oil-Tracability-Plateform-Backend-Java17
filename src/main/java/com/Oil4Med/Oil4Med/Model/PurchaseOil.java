@@ -27,7 +27,7 @@ public class PurchaseOil {
     @Column(name = "seller_id", nullable = false)
     private Long sellerId;
 
-    @Column(name = "seller_type")
+    @Column(name = "buyer_type")
     private Buyer buyerType;
 
     @Column(name = "seller_type")
@@ -39,14 +39,14 @@ public class PurchaseOil {
     @Column(name = "quantity")
     private double quantity;
 
-    @ManyToOne
-    @JoinColumn(name="storage_area_id")
-    private StorageArea storageArea;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name="storage_area_id")
+//    private String storageArea;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="consumer_id")
     private Consumer consumer;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<UnpackedOil> unpackedOilList;
 }

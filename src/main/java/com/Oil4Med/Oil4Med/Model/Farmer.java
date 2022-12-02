@@ -19,14 +19,14 @@ public class Farmer {
     private Long farmerId;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="admin_id")
     private Admin admin;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<OliveGrove> oliveGroves;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="mill_agreement_id")
     private MillAgreement millAgreement;
 

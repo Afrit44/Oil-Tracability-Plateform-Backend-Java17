@@ -63,17 +63,17 @@ public class Mill {
     @Column(name = "cleaning_products")
     private String cleaningProducts;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="admin_id")
     private Admin admin;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<PurchaseHarvest> purchaseHarvestList;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private MillAgreement millAgreement;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="machines_id")
     private List<Machine> machines;
 }

@@ -21,12 +21,12 @@ public class Consumer {
     @Column(name="name")
     private String name;
 
-    @OneToMany
-    private List<PurchaseOil> purchaseOilList;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<PurchaseOil> purchaseOilListByConsumer;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="admin_id")
-    private Admin admin;
+    private Admin adminCreatedConsumer;
 
 }
 

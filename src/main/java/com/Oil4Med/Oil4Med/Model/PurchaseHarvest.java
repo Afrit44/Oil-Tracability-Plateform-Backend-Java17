@@ -26,10 +26,10 @@ public class PurchaseHarvest {
     @Column(name = "quantity")
     private double quantity;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Mill mill;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="olive_harvest_id")
     private OliveHarvest oliveHarvest;
 }

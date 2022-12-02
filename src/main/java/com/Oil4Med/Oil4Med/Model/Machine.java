@@ -22,9 +22,9 @@ public class Machine {
     @Column(name = "mill_id", nullable = false)
     private Long millId;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Extraction> extrations;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Mill mill;
 }

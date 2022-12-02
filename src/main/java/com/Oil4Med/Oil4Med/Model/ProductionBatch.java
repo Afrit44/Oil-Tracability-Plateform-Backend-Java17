@@ -21,8 +21,8 @@ public class ProductionBatch {
     @Column(name = "production_batch_id", nullable = false)
     private Long productionBatchId;
 
-    @Column(name = "extraction_id", nullable = false)
-    private Long extractionId;
+//    @Column(name = "extraction_id", nullable = false)
+//    private Long extractionId;
 
     @Column(name = "analysis_quality_1")
     private AnalysisQuality1 analysisQuality1;
@@ -54,10 +54,10 @@ public class ProductionBatch {
     @Column(name = "owner")
     private Owner owner;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="extraction_id")
     private Extraction extraction;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<UnpackedOil> unpackedOilList;
 }

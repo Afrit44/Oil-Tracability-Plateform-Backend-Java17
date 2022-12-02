@@ -21,14 +21,14 @@ public class Extraction {
     @Column(name = "extraction_id", nullable = false)
     private Long extractionId;
 
-    @Column(name = "mill_agreement_id", nullable = false)
-    private Long millAgreementId;
+//    @Column(name = "mill_agreement_id", nullable = false)
+//    private Long millAgreementId;
 
-    @Column(name = "machine_id", nullable = false)
-    private Long machineId;
+//    @Column(name = "machine_id", nullable = false)
+//    private Long machineId;
 
-    @Column(name = "supply_id", nullable = false)
-    private Long supplyId;
+//    @Column(name = "supply_id", nullable = false)
+//    private Long supplyId;
 
     @Column(name = "status")
     private ExtractionStatus extractionStatus;
@@ -39,13 +39,13 @@ public class Extraction {
     @Column(name = "finish_date")
     private Date finishDate;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<OliveSupplyForExtraction> oliveSupplyForExtractionList;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="machines_id")
     private List<Machine> machines;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ProductionBatch productionBatch;
 }

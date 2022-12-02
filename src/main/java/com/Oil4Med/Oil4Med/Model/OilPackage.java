@@ -33,10 +33,10 @@ public class OilPackage {
     @Column(name = "matricule")
     private String matricule;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="unpakced_oil_id")
     private UnpackedOil unpackedOil;
 
-    @OneToMany
-    private List<StorageArea> storageAreas;
+//    @OneToMany(cascade = CascadeType.ALL)
+//    private List<String> storageAreas;
 }

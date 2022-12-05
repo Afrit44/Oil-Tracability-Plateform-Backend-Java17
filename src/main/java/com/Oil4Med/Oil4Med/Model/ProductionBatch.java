@@ -59,5 +59,5 @@ public class ProductionBatch {
     private Extraction extraction;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<UnpackedOil> unpackedOilList;
+    private List<OilProduct> oilProductList;
 }

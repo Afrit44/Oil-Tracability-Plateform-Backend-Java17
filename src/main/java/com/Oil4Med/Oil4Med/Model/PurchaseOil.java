@@ -33,8 +33,8 @@ public class PurchaseOil {
     @Column(name = "seller_type")
     private Seller sellerType;
 
-    @Column(name = "bottled")
-    private boolean bottled;
+    @Column(name = "price")
+    private double price;
 
     @Column(name = "quantity")
     private double quantity;
@@ -47,6 +47,6 @@ public class PurchaseOil {
 //    @JoinColumn(name="consumer_id")
     private Consumer consumer;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<UnpackedOil> unpackedOilList;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private OilProduct oilProduct;
 }

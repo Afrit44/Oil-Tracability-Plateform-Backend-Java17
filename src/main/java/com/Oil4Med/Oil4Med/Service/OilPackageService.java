@@ -1,15 +1,15 @@
 package com.Oil4Med.Oil4Med.Service;
 
 
-import com.Oil4Med.Oil4Med.Model.OilPackage;
+import com.Oil4Med.Oil4Med.Model.PackagingOperation;
 
 import java.util.List;
 
 public interface OilPackageService {
 
-    List<OilPackage> getOilPackage();
-    OilPackage getOilPackageById(Long id);
-    void addOilPackage(OilPackage oilPackage);
-    void deleteOilPackage(OilPackage oilPackage);
-    void updateOilPackage(Long id, OilPackage oilPackage);
+    List<PackagingOperation> getOilPackage();
+    PackagingOperation getOilPackageById(Long id);
+    void addOilPackage(PackagingOperation packagingOperation);
+    void deleteOilPackage(PackagingOperation packagingOperation);
+    void updateOilPackage(Long id, PackagingOperation packagingOperation);
 }

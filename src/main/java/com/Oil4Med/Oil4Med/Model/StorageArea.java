@@ -8,8 +8,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 @Data
@@ -41,14 +39,14 @@ public class StorageArea {
     @Column(name = "address")
     private Address address;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+/*    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="oil_package_id")
-    private OilPackage oilPackage;
+    private PackagingOperation packagingOperation;*/
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<PurchaseOil> listOfPurchaseOil;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private MillAgreement millAgreement;
+    /*@OneToOne(cascade = CascadeType.ALL)
+    private MillAgreement millAgreement;*/
 
 }

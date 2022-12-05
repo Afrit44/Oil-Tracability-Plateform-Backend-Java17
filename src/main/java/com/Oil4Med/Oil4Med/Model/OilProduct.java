@@ -1,27 +1,27 @@
 package com.Oil4Med.Oil4Med.Model;
 
 import com.Oil4Med.Oil4Med.Model.Enum.AnalysisType;
-import com.Oil4Med.Oil4Med.Model.Enum.CarType;
 import com.Oil4Med.Oil4Med.Model.Enum.OilClass;
+import com.Oil4Med.Oil4Med.Model.Enum.OilProductState;
+import com.Oil4Med.Oil4Med.Model.Enum.TypeOfPackaging;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
 import java.util.List;
 
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="UnpackedOil")
-public class UnpackedOil {
+@Table(name="OilProduct")
+public class OilProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "unpacked_oil_id", nullable = false)
-    private Long unpackedOilId;
+    private Long OilId;
 
     @Column(name = "production_id", nullable = false)
     private Long productionId;
@@ -35,15 +35,27 @@ public class UnpackedOil {
 //    @Column(name = "owner_id", nullable = false)
     private Long ownerId;
 
+    @Column(name = "oil_quantity")
+    private double oilQuantity;
+
+    @Column(name = "matricule")
+    private String matricule;
+
+    @Column(name = "packaging_type")
+    private TypeOfPackaging typeOfPackaging;
+
+    @Column(name = "oil_product_state")
+    private OilProductState oilProductState;
+
     @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="production_batch_id")
     private ProductionBatch productionBatch;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<OilPackage> oilPackageList;
-
     @ManyToOne(cascade = CascadeType.ALL)
+    private PackagingOperation packagingOperation;
+
+    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="pucharse_oil_id")
-    private PurchaseOil purchaseOil;
+    private List<PurchaseOil> purchaseOilList;
 
 }

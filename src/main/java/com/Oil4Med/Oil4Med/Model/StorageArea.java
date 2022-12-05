@@ -25,20 +25,17 @@ public class StorageArea {
     @Column(name = "storage_area_id", nullable = false)
     private Long storageAreaId;
 
-//    @Column(name = "oil_package_list")
-//    private List<OilPackage> oilPackageList;
-
     @Column(name = "owner")
     private String owner;
 
     @Column(name = "local_type")
     private LocalType localType;
 
-    @Column(name = "temperature")
-    private HashMap<Date,Float> temperature;
-
-    @Column(name = "humidity")
-    private HashMap<Date,Float> humidity;
+//    @Column(name = "temperature")
+//    private HashMap<Date,Float> temperature;
+//
+//    @Column(name = "humidity")
+//    private HashMap<Date,Float> humidity;
 
     @Embedded
     @Column(name = "address")

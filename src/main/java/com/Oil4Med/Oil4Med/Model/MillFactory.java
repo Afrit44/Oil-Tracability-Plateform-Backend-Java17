@@ -1,5 +1,6 @@
 package com.Oil4Med.Oil4Med.Model;
 
+import com.Oil4Med.Oil4Med.Model.Enum.StoringMean;
 import com.Oil4Med.Oil4Med.Model.Types.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,12 +14,21 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="Mill")
-public class Mill {
+public class MillFactory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "mill_id", nullable = false)
     private Long millId;
+
+    @Column(name="mill_Name")
+    private String millName;
+
+    @Column(name="email")
+    private String email;
+
+    @Column(name="password")
+    private String password;
 
     @Embedded
     @Column(name = "address")
@@ -31,7 +41,7 @@ public class Mill {
     private double millingCapacity;
 
     @Column(name = "storing_mean")
-    private String storingMean;
+    private StoringMean storingMean;
 
     @Column(name = "container_type")
     private String containerType;
@@ -64,7 +74,7 @@ public class Mill {
     private String cleaningProducts;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="admin_id")
+//    @JoinColumn(name="admin_id")
     private Admin admin;
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -74,6 +84,10 @@ public class Mill {
     private MillAgreement millAgreement;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="machines_id")
+//    @JoinColumn(name="machines_id")
     private List<Machine> machines;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Tank> tanksRelatedToMill;
+
 }

@@ -32,18 +32,18 @@ public class UnpackedOil {
     @Column(name = "analysis_type")
     private AnalysisType analysisType;
 
-    @Column(name = "owner_id", nullable = false)
+//    @Column(name = "owner_id", nullable = false)
     private Long ownerId;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="production_batch_id")
+//    @JoinColumn(name="production_batch_id")
     private ProductionBatch productionBatch;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<OilPackage> oilPackageList;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="pucharse_oil_id")
+//    @JoinColumn(name="pucharse_oil_id")
     private PurchaseOil purchaseOil;
 
 }

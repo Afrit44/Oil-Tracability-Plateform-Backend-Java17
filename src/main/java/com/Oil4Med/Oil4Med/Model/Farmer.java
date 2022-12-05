@@ -18,16 +18,30 @@ public class Farmer {
     @Column(name = "farmer_id", nullable = false)
     private Long farmerId;
 
+    @Column(name="firstName")
+    private String firstName;
+
+    @Column(name="lastName")
+    private String lastName;
+
+    @Column(name="email")
+    private String email;
+
+    @Column(name="password")
+    private String password;
+
+    @Column(name="phone_Number")
+    private String phoneNumber;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="admin_id")
+//    @JoinColumn(name="admin_id")
     private Admin admin;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<OliveGrove> oliveGroves;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="mill_agreement_id")
+//    @JoinColumn(name="mill_agreement_id")
     private MillAgreement millAgreement;
 
 }

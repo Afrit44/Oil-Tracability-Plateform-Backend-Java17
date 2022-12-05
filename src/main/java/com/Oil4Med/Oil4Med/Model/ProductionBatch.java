@@ -55,7 +55,7 @@ public class ProductionBatch {
     private Owner owner;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="extraction_id")
+//    @JoinColumn(name="extraction_id")
     private Extraction extraction;
 
     @OneToMany(cascade = CascadeType.ALL)

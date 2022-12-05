@@ -28,10 +28,10 @@ public class OliveSupplyForExtraction {
     private ExtractionType extractionType;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="olive_harvest_id")
+//    @JoinColumn(name="olive_harvest_id")
     private OliveHarvest oliveHarvest;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="extraction_id")
+//    @JoinColumn(name="extraction_id")
     private Extraction extraction;
 }

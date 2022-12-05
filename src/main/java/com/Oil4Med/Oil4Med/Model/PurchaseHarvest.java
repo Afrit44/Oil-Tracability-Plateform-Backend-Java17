@@ -27,9 +27,9 @@ public class PurchaseHarvest {
     private double quantity;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Mill mill;
+    private MillFactory millFactory;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="olive_harvest_id")
+//    @JoinColumn(name="olive_harvest_id")
     private OliveHarvest oliveHarvest;
 }

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -17,8 +19,9 @@ public class Tank {
     @Column(name = "machine_id", nullable = false)
     private Long machineId;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "mill_id", nullable = false)
-    private Long millId;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Machine> tanksMachine;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private MillFactory tanksMillFactory;
 }

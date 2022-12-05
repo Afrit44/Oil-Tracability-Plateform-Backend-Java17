@@ -75,6 +75,7 @@ public class OliveHarvest {
     private OliveGrove oliveGrove;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @ElementCollection(targetClass= OliveSupplyForExtraction.class)
     private List<OliveSupplyForExtraction> oliveSupplyForExtractionList;
 
     @OneToOne(cascade = CascadeType.ALL)

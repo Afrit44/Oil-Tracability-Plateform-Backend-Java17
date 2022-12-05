@@ -41,7 +41,7 @@ public class OliveGrove {
     private Double density;
 
     @Column(name = "variety_trees")
-    private List<Enum> varietyTrees;
+    private List<String> varietyTrees;
 
     @Column(name = "type_of_soil")
     private TypeOfSoil typeOfSoil;
@@ -62,10 +62,10 @@ public class OliveGrove {
     private boolean irrigation;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="farmer_id")
+//    @JoinColumn(name="farmer_id")
     private Farmer farmer;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="olive_harvest_id")
+//    @JoinColumn(name="olive_harvest_id")
     private OliveHarvest oliveHarvest;
 }

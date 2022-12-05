@@ -44,7 +44,7 @@ public class PurchaseOil {
 //    private String storageArea;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="consumer_id")
+//    @JoinColumn(name="consumer_id")
     private Consumer consumer;
 
     @OneToMany(cascade = CascadeType.ALL)

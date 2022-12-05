@@ -18,14 +18,23 @@ public class Consumer {
     @Column(name = "consumer_id", nullable = false)
     private Long consumerId;
 
-    @Column(name="name")
-    private String name;
+    @Column(name="firstName")
+    private String firstName;
+
+    @Column(name="lastName")
+    private String lastName;
+
+    @Column(name="email")
+    private String email;
+
+    @Column(name="password")
+    private String password;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<PurchaseOil> purchaseOilListByConsumer;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="admin_id")
+//    @JoinColumn(name="admin_id")
     private Admin adminCreatedConsumer;
 
 }

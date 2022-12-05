@@ -19,6 +19,18 @@ public class Admin {
     @Column(name = "admin_id", nullable = false)
     private Long adminId;
 
+    @Column(name="firstName")
+    private String firstName;
+
+    @Column(name="lastName")
+    private String lastName;
+
+    @Column(name="email")
+    private String email;
+
+    @Column(name="password")
+    private String password;
+
     @OneToMany(mappedBy = "admin",cascade = CascadeType.ALL)
     private List<Farmer> farmersCreated;
 
@@ -26,6 +38,6 @@ public class Admin {
     private List<Consumer> consumersCreated;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Mill> millsCreated;
+    private List<MillFactory> millsCreated;
 
 }

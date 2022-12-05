@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -19,12 +20,21 @@ public class Machine {
     @Column(name = "machine_id", nullable = false)
     private Long machineId;
 
-    @Column(name = "mill_id", nullable = false)
-    private Long millId;
+    @Column(name="marque")
+    private String marque;
+
+    @Column(name="constructor")
+    private String constructor;
+
+    @Column(name="purchaseDate")
+    private Date purchaseDate;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    private List<Extraction> extrations;
+    private List<Extraction> extractions;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Mill mill;
+    private MillFactory millFactory;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Tank> tanksRelatedToMachine;
 }

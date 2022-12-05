@@ -34,7 +34,7 @@ public class OilPackage {
     private String matricule;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="unpakced_oil_id")
+//    @JoinColumn(name="unpakced_oil_id")
     private UnpackedOil unpackedOil;
 
 //    @OneToMany(cascade = CascadeType.ALL)

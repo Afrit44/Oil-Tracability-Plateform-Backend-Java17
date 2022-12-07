@@ -42,10 +42,7 @@ public class PackagingOperation {
     private String matricule;
 
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="unpakced_oil_id")
     private List<OilProduct> oilProductList;
-
-//    @OneToMany(cascade = CascadeType.ALL)
-//    private List<String> storageAreas;
 }

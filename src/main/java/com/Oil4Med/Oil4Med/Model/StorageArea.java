@@ -42,14 +42,7 @@ public class StorageArea {
     @Column(name = "address")
     private Address address;
 
-/*    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="oil_package_id")
-    private PackagingOperation packagingOperation;*/
-
     @OneToMany(cascade = CascadeType.ALL)
     private List<PurchaseOil> listOfPurchaseOil;
-
-    /*@OneToOne(cascade = CascadeType.ALL)
-    private MillAgreement millAgreement;*/
 
 }

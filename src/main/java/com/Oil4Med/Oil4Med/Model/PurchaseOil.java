@@ -39,10 +39,6 @@ public class PurchaseOil {
     @Column(name = "quantity")
     private double quantity;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="storage_area_id")
-//    private String storageArea;
-
     @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="consumer_id")
     private Consumer consumer;

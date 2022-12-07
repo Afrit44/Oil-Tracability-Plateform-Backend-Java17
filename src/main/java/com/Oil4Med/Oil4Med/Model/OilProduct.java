@@ -50,24 +50,21 @@ public class OilProduct {
     @Column(name = "oil_quantity")
     private double oilQuantity;
 
-    @Column(name = "matricule")
-    private String matricule;
-
-    @Column(name = "packaging_type")
-    private TypeOfPackaging typeOfPackaging;
-
     @Column(name = "oil_product_state")
     private OilProductState oilProductState;
 
     @Column(name = "storing_state")
     private boolean isStored;
 
+    @Column(name = "packaging_state")
+    private boolean isPacked;
+
     @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="production_batch_id")
     private OilProductionBatch oilProductionBatch;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<PackagingOperation> packagingOperationList;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private PackagingOperation packagingOperation;
 
     @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="pucharse_oil_id")

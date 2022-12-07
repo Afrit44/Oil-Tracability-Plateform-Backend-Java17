@@ -18,9 +18,6 @@ public class OliveSupplyForExtraction {
     @Column(name = "supply_id", nullable = false)
     private Long supplyId;
 
-    /*@Column(name = "harvest_id", nullable = false)
-    private Long harvestId;*/
-
     @Column(name = "weight")
     private double weight;
 

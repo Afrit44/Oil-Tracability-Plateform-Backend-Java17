@@ -39,14 +39,15 @@ public class Farmer {
     private Address address;
 
     @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="admin_id")
+    @JoinColumn(name="admin_id")
     private Admin admin;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="olive_groves_id")
     private List<OliveGrove> oliveGroves;
 
     @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name="mill_agreement_id")
+    @JoinColumn(name="mill_agreement_id")
     private List<MillAgreement> millAgreementList;
 
 }

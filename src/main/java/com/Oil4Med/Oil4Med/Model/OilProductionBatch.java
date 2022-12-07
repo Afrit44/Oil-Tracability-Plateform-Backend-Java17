@@ -21,8 +21,8 @@ public class OilProductionBatch {
     @Column(name = "production_batch_id", nullable = false)
     private Long productionBatchId;
 
-//    @Column(name = "extraction_id", nullable = false)
-//    private Long extractionId;
+    @Column(name = "extraction_id", nullable = false)
+    private Long extractionId;
 
     @Column(name = "analysis_type")
     private AnalysisType analysisType;

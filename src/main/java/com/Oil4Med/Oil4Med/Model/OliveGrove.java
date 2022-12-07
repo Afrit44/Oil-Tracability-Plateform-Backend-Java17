@@ -23,9 +23,6 @@ public class OliveGrove {
     @Column(name = "grove_id", nullable = false)
     private Long groveId;
 
-//    @Column(name = "farmer_id", nullable = false)
-//    private String farmerId;
-
     @Embedded
     @Column(name = "address")
     private Address address;

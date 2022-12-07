@@ -13,8 +13,8 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="ProductionBatch")
-public class ProductionBatch {
+@Table(name="OilProductionBatch")
+public class OilProductionBatch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,23 +24,8 @@ public class ProductionBatch {
 //    @Column(name = "extraction_id", nullable = false)
 //    private Long extractionId;
 
-    @Column(name = "analysis_quality_1")
-    private AnalysisQuality1 analysisQuality1;
-
-    @Column(name = "analysis_quality_2")
-    private AnalysisQuality2 analysisQuality2;
-
-    @Column(name = "analysis_quality_3")
-    private AnalysisQuality3 analysisQuality3;
-
-    @Column(name = "analysis_quality_4")
-    private AnalysisQuality4 analysisQuality4;
-
-    @Column(name = "analysis_quality_5")
-    private AnalysisQuality5 analysisQuality5;
-
-    @Column(name = "analysis_quality_6")
-    private AnalysisQuality6 analysisQuality6;
+    @Column(name = "analysis_type")
+    private AnalysisType analysisType;
 
     @Column(name = "production_for_sale")
     private boolean productionForSale;

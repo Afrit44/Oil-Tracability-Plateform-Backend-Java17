@@ -40,10 +40,16 @@ public class MillAgreement {
     @Column(name = "processing_date")
     private Date processingDate;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @Column(name = "storage_area")
+    private StorageArea storageArea;
+
+    @ManyToOne(cascade = CascadeType.ALL)
     private Farmer farmer;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private MillFactory millFactory;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Extraction extraction;
 
 }

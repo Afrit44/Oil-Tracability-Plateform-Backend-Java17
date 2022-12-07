@@ -30,7 +30,19 @@ public class Extraction {
     @Column(name = "finish_date")
     private Date finishDate;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @Column(name = "Water_per_100Kg")
+    private double waterPer100Kg;
+
+    @Column(name = "average_mixing_time")
+    private double averageMixingTime;
+
+    @Column(name = "press_temperature")
+    private double pressTemperature;
+
+    @Column(name = "filtration")
+    private boolean filtration;
+
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<OliveSupplyForExtraction> oliveSupplyForExtractionList;
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -38,5 +50,8 @@ public class Extraction {
     private List<Machine> machines;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private ProductionBatch productionBatch;
+    private OilProductionBatch oilProductionBatch;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<MillAgreement> millAgreementList;
 }

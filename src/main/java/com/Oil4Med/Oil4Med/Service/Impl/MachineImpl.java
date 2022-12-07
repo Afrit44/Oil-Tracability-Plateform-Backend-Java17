@@ -3,6 +3,7 @@ package com.Oil4Med.Oil4Med.Service.Impl;
 import com.Oil4Med.Oil4Med.Model.Machine;
 import com.Oil4Med.Oil4Med.Repository.MachineRepository;
 import com.Oil4Med.Oil4Med.Service.MachineService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Service
 public class MachineImpl implements MachineService {
+    @Autowired
     MachineRepository machineRepository;
 
     public MachineImpl(MachineRepository machineRepository){

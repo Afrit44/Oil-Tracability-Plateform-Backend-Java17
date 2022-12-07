@@ -3,6 +3,7 @@ package com.Oil4Med.Oil4Med.Model;
 import com.Oil4Med.Oil4Med.Model.Enum.TypeOfOlive;
 import com.Oil4Med.Oil4Med.Model.Enum.TypeOfSoil;
 import com.Oil4Med.Oil4Med.Model.Enum.OwnershipNature;
+import com.Oil4Med.Oil4Med.Model.Types.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,8 +26,9 @@ public class OliveGrove {
 //    @Column(name = "farmer_id", nullable = false)
 //    private String farmerId;
 
+    @Embedded
     @Column(name = "address")
-    private String address;
+    private Address address;
 
     @Column(name = "ownership_nature")
     private OwnershipNature ownershipNature;
@@ -65,7 +67,7 @@ public class OliveGrove {
 //    @JoinColumn(name="farmer_id")
     private Farmer farmer;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="olive_harvest_id")
-    private OliveHarvest oliveHarvest;
+    private List<OliveHarvest> oliveHarvestList;
 }

@@ -1,5 +1,6 @@
 package com.Oil4Med.Oil4Med.Model;
 
+import com.Oil4Med.Oil4Med.Model.Types.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,6 +34,10 @@ public class Farmer {
     @Column(name="phone_Number")
     private String phoneNumber;
 
+    @Embedded
+    @Column(name = "Address")
+    private Address address;
+
     @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="admin_id")
     private Admin admin;
@@ -40,8 +45,8 @@ public class Farmer {
     @OneToMany(cascade = CascadeType.ALL)
     private List<OliveGrove> oliveGroves;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="mill_agreement_id")
-    private MillAgreement millAgreement;
+    private List<MillAgreement> millAgreementList;
 
 }

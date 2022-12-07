@@ -1,9 +1,6 @@
 package com.Oil4Med.Oil4Med.Model;
 
-import com.Oil4Med.Oil4Med.Model.Enum.AnalysisType;
-import com.Oil4Med.Oil4Med.Model.Enum.OilClass;
-import com.Oil4Med.Oil4Med.Model.Enum.OilProductState;
-import com.Oil4Med.Oil4Med.Model.Enum.TypeOfPackaging;
+import com.Oil4Med.Oil4Med.Model.Enum.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,8 +17,8 @@ public class OilProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "unpacked_oil_id", nullable = false)
-    private Long OilId;
+    @Column(name = "oil_product_id", nullable = false)
+    private Long oilProductId;
 
     @Column(name = "production_id", nullable = false)
     private Long productionId;
@@ -29,11 +26,26 @@ public class OilProduct {
     @Column(name = "oil_class")
     private OilClass oilClass;
 
-    @Column(name = "analysis_type")
-    private AnalysisType analysisType;
+    @Column(name = "analysis_quality_1")
+    private AnalysisQuality1 analysisQuality1;
+
+    @Column(name = "analysis_quality_2")
+    private AnalysisQuality2 analysisQuality2;
+
+    @Column(name = "analysis_quality_3")
+    private AnalysisQuality3 analysisQuality3;
+
+    @Column(name = "analysis_quality_4")
+    private AnalysisQuality4 analysisQuality4;
+
+    @Column(name = "analysis_quality_5")
+    private AnalysisQuality5 analysisQuality5;
+
+    @Column(name = "analysis_quality_6")
+    private AnalysisQuality6 analysisQuality6;
 
 //    @Column(name = "owner_id", nullable = false)
-    private Long ownerId;
+//   private Long ownerId;
 
     @Column(name = "oil_quantity")
     private double oilQuantity;
@@ -47,15 +59,21 @@ public class OilProduct {
     @Column(name = "oil_product_state")
     private OilProductState oilProductState;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="production_batch_id")
-    private ProductionBatch productionBatch;
+    @Column(name = "storing_state")
+    private boolean isStored;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private PackagingOperation packagingOperation;
+//    @JoinColumn(name="production_batch_id")
+    private OilProductionBatch oilProductionBatch;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<PackagingOperation> packagingOperationList;
 
     @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="pucharse_oil_id")
     private List<PurchaseOil> purchaseOilList;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private StorageArea storageArea;
 
 }

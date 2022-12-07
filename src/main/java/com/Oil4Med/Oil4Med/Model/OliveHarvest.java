@@ -1,9 +1,6 @@
 package com.Oil4Med.Oil4Med.Model;
 
-import com.Oil4Med.Oil4Med.Model.Enum.OliveMaturity;
-import com.Oil4Med.Oil4Med.Model.Enum.State;
-import com.Oil4Med.Oil4Med.Model.Enum.MethodOfHarvest;
-import com.Oil4Med.Oil4Med.Model.Enum.TypeOfPackaging;
+import com.Oil4Med.Oil4Med.Model.Enum.*;
 import com.Oil4Med.Oil4Med.Model.Types.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -46,6 +43,7 @@ public class OliveHarvest {
     @Column(name = "avg_transport_before_mill")
     private int avgTransportBeforeMill;
 
+    //What packaging?
     @Column(name = "packaging")
     private TypeOfPackaging packaging;
 
@@ -68,10 +66,20 @@ public class OliveHarvest {
     @Column(name = "owner_address")
     private Address address;
 
+    //why???
     @Column(name = "extraction_id")
     private Long extractionId;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @Column(name = "transport_to_mill_date")
+    private Date transportToMillDate;
+
+    @Column(name = "car_type")
+    private CarType carType;
+
+    @Column(name = "matricule")
+    private String matricule;
+
+    @ManyToOne(cascade = CascadeType.ALL)
     private OliveGrove oliveGrove;
 
     @OneToMany(cascade = CascadeType.ALL)

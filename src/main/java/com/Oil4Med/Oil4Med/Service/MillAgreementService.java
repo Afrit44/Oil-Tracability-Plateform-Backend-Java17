@@ -8,7 +8,7 @@ public interface MillAgreementService {
 
     List<MillAgreement> getMillAgreements();
     MillAgreement getMillAgreementById(Long id);
-    void addMillAgreement(MillAgreement millAgreement);
+    MillAgreement addMillAgreement(MillAgreement millAgreement);
     void deleteMillAgreement(MillAgreement millAgreement);
     void updateMillAgreement(Long id, MillAgreement millAgreement);
 }

@@ -1,4 +1,4 @@
 package com.Oil4Med.Oil4Med.Service;
 
-public interface UnpackedOilService {
+public interface OilProductService {
 }

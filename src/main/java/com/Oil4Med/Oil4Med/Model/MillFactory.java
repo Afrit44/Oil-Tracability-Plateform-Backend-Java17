@@ -43,35 +43,20 @@ public class MillFactory {
     @Column(name = "storing_mean")
     private StoringMean storingMean;
 
-    @Column(name = "container_type")
-    private String containerType;
+    @Column(name = "manager_name")
+    private String managerName;
 
-    @Column(name = "maintenance")
-    private String maintenance;
+    @Column(name = "number_of_machines")
+    private double numberOfMachines;
 
-    @Column(name = "number_of_phases")
-    private int numberOfPhases;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-    @Column(name = "number_of_grinders")
-    private int numberOfGrinders;
+    @Column(name = "fax")
+    private String fax;
 
-    @Column(name = "avg_crush_time_per_Tonne")
-    private double avgCrushTimePerTonne;
-
-    @Column(name = "water_per_100kg")
-    private double waterPer100Kg;
-
-    @Column(name = "avg_mixing_time")
-    private double avgMixingTime;
-
-    @Column(name = "press_temperature")
-    private double pressTemperature;
-
-    @Column(name = "filtration")
-    private boolean Filtration;
-
-    @Column(name = "cleaning_products")
-    private String cleaningProducts;
+    @Column(name = "website")
+    private String website;
 
     @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="admin_id")
@@ -80,8 +65,8 @@ public class MillFactory {
     @OneToMany(cascade = CascadeType.ALL)
     private List<PurchaseHarvest> purchaseHarvestList;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private MillAgreement millAgreement;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<MillAgreement> millAgreementList;
 
     @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="machines_id")

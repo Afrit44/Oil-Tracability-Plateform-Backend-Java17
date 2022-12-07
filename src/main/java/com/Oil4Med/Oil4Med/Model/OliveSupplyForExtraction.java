@@ -18,8 +18,8 @@ public class OliveSupplyForExtraction {
     @Column(name = "supply_id", nullable = false)
     private Long supplyId;
 
-    @Column(name = "harvest_id", nullable = false)
-    private Long harvestId;
+    /*@Column(name = "harvest_id", nullable = false)
+    private Long harvestId;*/
 
     @Column(name = "weight")
     private double weight;
@@ -31,7 +31,7 @@ public class OliveSupplyForExtraction {
 //    @JoinColumn(name="olive_harvest_id")
     private OliveHarvest oliveHarvest;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="extraction_id")
     private Extraction extraction;
 }

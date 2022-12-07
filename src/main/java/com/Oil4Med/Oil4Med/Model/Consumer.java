@@ -30,11 +30,11 @@ public class Consumer {
     @Column(name="password")
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "consumer")
     private List<PurchaseOil> purchaseOilListByConsumer;
 
     @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="admin_id")
+    @JoinColumn(name="adminId",nullable = false,referencedColumnName = "adminId")
     private Admin adminCreatedConsumer;
 
 }

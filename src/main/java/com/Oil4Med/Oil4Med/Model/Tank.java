@@ -16,12 +16,13 @@ public class Tank {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "machine_id", nullable = false)
-    private Long machineId;
+    @Column(name = "tank_id", nullable = false)
+    private Long tankId;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Machine> tanksMachine;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "tank")
+    private List<Machine> machines;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "millId",nullable = false,referencedColumnName = "millId")
     private MillFactory tanksMillFactory;
 }

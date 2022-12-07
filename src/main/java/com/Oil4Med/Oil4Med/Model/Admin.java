@@ -31,13 +31,13 @@ public class Admin {
     @Column(name="password")
     private String password;
 
-    @OneToMany(mappedBy = "admin",cascade = CascadeType.ALL)
-    private List<Farmer> farmersCreated;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "admin")
+    private List<Farmer> farmers;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Consumer> consumersCreated;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "adminCreatedConsumer")
+    private List<Consumer> consumers;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<MillFactory> millsCreated;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "admin")
+    private List<MillFactory> mills;
 
 }

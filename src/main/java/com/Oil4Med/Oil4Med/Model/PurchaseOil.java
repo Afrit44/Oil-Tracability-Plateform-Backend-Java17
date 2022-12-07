@@ -39,10 +39,11 @@ public class PurchaseOil {
     @Column(name = "quantity")
     private double quantity;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="consumer_id")
+    @ManyToOne
+    @JoinColumn(name = "consumerId",nullable = false,referencedColumnName = "consumerId")
     private Consumer consumer;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "oilProductId",nullable = false,referencedColumnName = "oilProductId")
     private OilProduct oilProduct;
 }

@@ -23,9 +23,6 @@ public class StorageArea {
     @Column(name = "storage_area_id", nullable = false)
     private Long storageAreaId;
 
-    @Column(name = "oil_package_list")
-    private List<OilProduct> oilProductList;
-
     @Column(name = "owner")
     private String owner;
 
@@ -42,7 +39,7 @@ public class StorageArea {
     @Column(name = "address")
     private Address address;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<PurchaseOil> listOfPurchaseOil;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "storageArea")
+    private List<OilProduct> listOfOilProduct;
 
 }

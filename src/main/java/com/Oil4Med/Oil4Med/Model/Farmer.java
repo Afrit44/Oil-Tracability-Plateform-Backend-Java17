@@ -38,16 +38,14 @@ public class Farmer {
     @Column(name = "Address")
     private Address address;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="admin_id")
+    @ManyToOne
+    @JoinColumn(name="adminId",nullable = false,referencedColumnName = "adminId")
     private Admin admin;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="olive_groves_id")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "farmer")
     private List<OliveGrove> oliveGroves;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="mill_agreement_id")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "farmer")
     private List<MillAgreement> millAgreementList;
 
 }

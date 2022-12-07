@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -24,11 +26,10 @@ public class OliveSupplyForExtraction {
     @Column(name = "extractionType")
     private ExtractionType extractionType;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="olive_harvest_id")
+    @ManyToOne
+    @JoinColumn(name="harvestId",nullable = false,referencedColumnName = "harvestId")
     private OliveHarvest oliveHarvest;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name="extraction_id")
-    private Extraction extraction;
+    @ManyToMany
+    private Set<Extraction> extractions;
 }

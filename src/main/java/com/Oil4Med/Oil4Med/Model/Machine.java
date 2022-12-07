@@ -32,9 +32,11 @@ public class Machine {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Extraction> extractions;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "millId",nullable = false,referencedColumnName = "millId")
     private MillFactory millFactory;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Tank> tanksRelatedToMachine;
+    @ManyToOne
+    @JoinColumn(name = "tankId",nullable = false,referencedColumnName = "tankId")
+    private Tank tank;
 }

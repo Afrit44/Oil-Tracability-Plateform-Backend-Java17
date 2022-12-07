@@ -60,11 +60,10 @@ public class OliveGrove {
     @Column(name = "irrigation")
     private boolean irrigation;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="farmer_id")
+    @ManyToOne
+    @JoinColumn(name = "farmerId",nullable = false,referencedColumnName = "farmerId")
     private Farmer farmer;
 
-    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name="olive_harvest_id")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "oliveGrove")
     private List<OliveHarvest> oliveHarvestList;
 }

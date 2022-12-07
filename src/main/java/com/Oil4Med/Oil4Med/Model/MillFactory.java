@@ -58,21 +58,20 @@ public class MillFactory {
     @Column(name = "website")
     private String website;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="admin_id")
+    @ManyToOne
+    @JoinColumn(name = "adminId",nullable = false,referencedColumnName = "adminId")
     private Admin admin;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "millFactory")
     private List<PurchaseHarvest> purchaseHarvestList;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "millFactory")
     private List<MillAgreement> millAgreementList;
 
-    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name="machines_id")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "millFactory")
     private List<Machine> machines;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "tanksMillFactory")
     private List<Tank> tanksRelatedToMill;
 
 }

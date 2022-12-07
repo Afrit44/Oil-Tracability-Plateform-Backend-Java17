@@ -20,9 +20,6 @@ public class OilProduct {
     @Column(name = "oil_product_id", nullable = false)
     private Long oilProductId;
 
-    @Column(name = "production_id", nullable = false)
-    private Long productionId;
-
     @Column(name = "oil_class")
     private OilClass oilClass;
 
@@ -44,9 +41,6 @@ public class OilProduct {
     @Column(name = "analysis_quality_6")
     private AnalysisQuality6 analysisQuality6;
 
-//    @Column(name = "owner_id", nullable = false)
-//   private Long ownerId;
-
     @Column(name = "oil_quantity")
     private double oilQuantity;
 
@@ -59,18 +53,19 @@ public class OilProduct {
     @Column(name = "packaging_state")
     private boolean isPacked;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="production_batch_id")
+    @ManyToOne
+    @JoinColumn(name = "productionBatchId",nullable = false,referencedColumnName = "productionBatchId")
     private OilProductionBatch oilProductionBatch;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "packagingId",nullable = false,referencedColumnName = "packagingId")
     private PackagingOperation packagingOperation;
 
-    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name="pucharse_oil_id")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "oilProduct")
     private List<PurchaseOil> purchaseOilList;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "storageAreaId",nullable = false,referencedColumnName = "storageAreaId")
     private StorageArea storageArea;
 
 }

@@ -17,19 +17,17 @@ public class PurchaseHarvest {
     @Column(name = "purchaseH_id", nullable = false)
     private Long purchaseHId;
 
-    @Column(name = "harvest_id", nullable = false)
-    private String harvestId;
-
     @Column(name = "buyer_id", nullable = false)
     private String buyerId;
 
     @Column(name = "quantity")
     private double quantity;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "millId",nullable = false,referencedColumnName = "millId")
     private MillFactory millFactory;
 
     @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="olive_harvest_id")
+    @JoinColumn(name = "harvestId",nullable = false,referencedColumnName = "harvestId")
     private OliveHarvest oliveHarvest;
 }

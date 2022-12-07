@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -45,13 +46,13 @@ public class Extraction {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<OliveSupplyForExtraction> oliveSupplyForExtractionList;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
 //    @JoinColumn(name="machines_id")
-    private List<Machine> machines;
+    private Set<Machine> machines;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "extraction")
     private OilProductionBatch oilProductionBatch;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "extraction")
     private List<MillAgreement> millAgreementList;
 }

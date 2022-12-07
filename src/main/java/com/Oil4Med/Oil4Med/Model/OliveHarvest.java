@@ -79,14 +79,15 @@ public class OliveHarvest {
     @Column(name = "matricule")
     private String matricule;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name="groveId",nullable = false,referencedColumnName = "groveId")
     private OliveGrove oliveGrove;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "oliveHarvest")
     @ElementCollection(targetClass= OliveSupplyForExtraction.class)
     private List<OliveSupplyForExtraction> oliveSupplyForExtractionList;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "oliveHarvest")
     private PurchaseHarvest purchaseHarvest;
 
 }

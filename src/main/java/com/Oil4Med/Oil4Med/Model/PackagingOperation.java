@@ -23,9 +23,6 @@ public class PackagingOperation {
     @Column(name = "packaging_id", nullable = false)
     private Long packagingId;
 
-    /*@Column(name = "oil_id", nullable = false)
-    private Long oilId;*/
-
     @Column(name = "packaging_date")
     private Date packagingDate;
 
@@ -42,7 +39,6 @@ public class PackagingOperation {
     private String matricule;
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name="unpakced_oil_id")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy ="packagingOperation")
     private List<OilProduct> oilProductList;
 }

@@ -19,9 +19,6 @@ public class MillAgreement {
     @Column(name = "mill_agreement_id", nullable = false)
     private Long millAgreementId;
 
-    @Column(name = "harvest_id", nullable = false)
-    private Long harvestId;
-
     @Column(name = "olive_quantity")
     private double oliveQuantity;
 
@@ -39,17 +36,23 @@ public class MillAgreement {
 
     @Column(name = "processing_date")
     private Date processingDate;
-
+    //why???
     @Column(name = "storage_area")
     private StorageArea storageArea;
+    //why???
+    @Column(name = "harvest_id", nullable = false)
+    private Long harvestId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name="farmerId",nullable = false,referencedColumnName = "farmerId")
     private Farmer farmer;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name="millId",nullable = false,referencedColumnName = "millId")
     private MillFactory millFactory;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name="extractionId",nullable = false,referencedColumnName = "extractionId")
     private Extraction extraction;
 
 }

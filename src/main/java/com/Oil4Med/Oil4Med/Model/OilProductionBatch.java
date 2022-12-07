@@ -40,9 +40,9 @@ public class OilProductionBatch {
     private Owner owner;
 
     @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="extraction_id")
+    @JoinColumn(name = "extractionId",nullable = false,referencedColumnName = "extractionId")
     private Extraction extraction;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "oilProductionBatch")
     private List<OilProduct> oilProductList;
 }

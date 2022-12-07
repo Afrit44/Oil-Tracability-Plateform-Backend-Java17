@@ -1,4 +1,4 @@
 package com.Oil4Med.Oil4Med.Service.Impl;
 
-public class PurchaseHarvestServiceImpl {
+public class PurchaseHarvestImpl {
 }

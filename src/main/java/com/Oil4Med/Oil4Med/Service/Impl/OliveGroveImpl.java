@@ -45,8 +45,6 @@ public class OliveGroveImpl implements OliveGroveService {
         oldGrove.setVarietyTrees(oliveGrove.getVarietyTrees());
         oldGrove.setType(oliveGrove.getType());
         oldGrove.setTypeOfSoil(oliveGrove.getTypeOfSoil());
-        oldGrove.setOliveHarvest(oliveGrove.getOliveHarvest());
-
         return oliveGroveRepository.save(oldGrove);
     }
 

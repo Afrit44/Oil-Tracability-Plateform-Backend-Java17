@@ -37,7 +37,11 @@ public class StorageAreaImpl implements StorageAreaService {
     @Override
     public void updateStorageArea(Long id, StorageArea storageArea) {
         StorageArea storageAreaFromDB = storageAreaRepository.findById(id).get();
-
+        storageAreaFromDB.setStorageAreaId(storageArea.getStorageAreaId());
+        storageAreaFromDB.setOwner(storageArea.getOwner());
+        storageAreaFromDB.setAddress(storageArea.getAddress());
+        storageAreaFromDB.setTemperature(storageArea.getTemperature());
+        storageAreaFromDB.setHumidity(storageArea.getHumidity());
         storageAreaRepository.save(storageArea);
     }
 }

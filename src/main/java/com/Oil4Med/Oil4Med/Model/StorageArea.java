@@ -2,6 +2,8 @@ package com.Oil4Med.Oil4Med.Model;
 
 import com.Oil4Med.Oil4Med.Model.Enum.LocalType;
 import com.Oil4Med.Oil4Med.Model.Types.Address;
+import com.Oil4Med.Oil4Med.Model.Types.Humidity;
+import com.Oil4Med.Oil4Med.Model.Types.Temperature;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,11 +31,13 @@ public class StorageArea {
     @Column(name = "local_type")
     private LocalType localType;
 
-//    @Column(name = "temperature")
-//    private HashMap<Date,Float> temperature;
-//
-//    @Column(name = "humidity")
-//    private HashMap<Date,Float> humidity;
+    @Embedded
+    @Column(name = "temperature")
+    private Temperature temperature;
+
+    @Embedded
+    @Column(name = "humidity")
+    private Humidity humidity;
 
     @Embedded
     @Column(name = "address")

@@ -35,6 +35,7 @@ public class OliveHarvestImpl implements OliveHarvestService {
         OliveGrove oliveGrove = oliveGroveRepository.findById(groveId).get();
         oldHarvest.setOliveGrove(oliveGrove);
         oldHarvest.setHarvestId(harvestId);
+        oldHarvest.setQuantity(oliveHarvest.getQuantity());
         oldHarvest.setHarvestingDate(oliveHarvest.getHarvestingDate());
         oldHarvest.setHarvestType(oliveHarvest.getHarvestType());
         oldHarvest.setPurchaseHarvest(oliveHarvest.getPurchaseHarvest());

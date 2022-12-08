@@ -79,6 +79,9 @@ public class OliveHarvest {
     @Column(name = "matricule")
     private String matricule;
 
+    @Column(name = "Quantity")
+    private double quantity;
+
     @ManyToOne
     @JoinColumn(name="groveId",nullable = false,referencedColumnName = "groveId")
     private OliveGrove oliveGrove;

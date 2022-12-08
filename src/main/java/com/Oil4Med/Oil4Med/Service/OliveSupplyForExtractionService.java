@@ -1,11 +1,13 @@
 package com.Oil4Med.Oil4Med.Service;
 
+import com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction;
+
 import java.util.List;
 
 public interface OliveSupplyForExtractionService {
-    public abstract com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction createOSupplyForExtraction(Long harvestId, com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction oSupplyForExtraction);
-    public abstract com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction updateOSupplyForExtraction(Long oSupplyForExtractId, Long harvestId, com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction oSupplyForExtraction);
-    public abstract void deleteOSupplyForExtraction(Long oSupplyForExtractId);
-    public abstract List<com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction> getoSupplyForExtracts();
-    public abstract com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction getOSupplyForExtractById(Long oSupplyForExtractId);
+    OliveSupplyForExtraction createOSupplyForExtraction(OliveSupplyForExtraction oSupplyForExtraction);
+    OliveSupplyForExtraction updateOSupplyForExtraction(Long oSupplyForExtractId, Long harvestId, OliveSupplyForExtraction oSupplyForExtraction);
+    void deleteOSupplyForExtraction(Long oSupplyForExtractId);
+    List<com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction> geToSupplyForExtracts();
+    OliveSupplyForExtraction getOSupplyForExtractById(Long oSupplyForExtractId);
 }

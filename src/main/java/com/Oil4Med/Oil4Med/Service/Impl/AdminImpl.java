@@ -37,7 +37,8 @@ public class AdminImpl implements AdminService {
     }
 
     @Override
-    public void updateAdmin(Admin admin,Admin newAdmin) {
+    public void updateAdmin(Long adminId,Admin newAdmin) {
+        Admin admin = adminRepository.findById(adminId).get();
         admin.setEmail(newAdmin.getEmail());
         admin.setLastName(newAdmin.getLastName());
         admin.setFirstName(newAdmin.getFirstName());

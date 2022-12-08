@@ -1,6 +1,8 @@
 package com.Oil4Med.Oil4Med.Service.Impl;
 
+
 import com.Oil4Med.Oil4Med.Model.OliveHarvest;
+import com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction;
 import com.Oil4Med.Oil4Med.Repository.OliveHarvestRepository;
 import com.Oil4Med.Oil4Med.Repository.OliveSupplyForExtractionRepository;
 import com.Oil4Med.Oil4Med.Service.OliveSupplyForExtractionService;
@@ -9,27 +11,25 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class OliveSupplyForExtractionServiceImpl implements OliveSupplyForExtractionService {
+public class OliveSupplyForExtractionImpl implements OliveSupplyForExtractionService {
     @Autowired
     OliveHarvestRepository oliveHarvestRepository;
     @Autowired
     OliveSupplyForExtractionRepository oliveSupplyForExtractionRepository;
-    public OliveSupplyForExtractionServiceImpl(OliveHarvestRepository oliveHarvestRepository, OliveSupplyForExtractionRepository oliveSupplyForExtractionRepository)
+    public OliveSupplyForExtractionImpl(OliveHarvestRepository oliveHarvestRepository, OliveSupplyForExtractionRepository oliveSupplyForExtractionRepository)
     {
         this.oliveSupplyForExtractionRepository =oliveSupplyForExtractionRepository;
         this.oliveHarvestRepository=oliveHarvestRepository;
 
     }
     @Override
-    public com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction createOSupplyForExtraction(Long harvestId, com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction oSupplyForExtraction) {
-        OliveHarvest oliveHarvest = oliveHarvestRepository.findById(harvestId).get();
-        oSupplyForExtraction.setOliveHarvest(oliveHarvest);
+    public OliveSupplyForExtraction createOSupplyForExtraction(OliveSupplyForExtraction oSupplyForExtraction) {
         return (oliveSupplyForExtractionRepository.save(oSupplyForExtraction));
     }
 
     @Override
-    public com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction updateOSupplyForExtraction(Long oSupplyForExtractId, Long harvestId, com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction oSupplyForExtraction) {
-        com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction oldSupplyExtraction = oliveSupplyForExtractionRepository.findById(oSupplyForExtractId).get();
+    public OliveSupplyForExtraction updateOSupplyForExtraction(Long oSupplyForExtractId, Long harvestId, OliveSupplyForExtraction oSupplyForExtraction) {
+        OliveSupplyForExtraction oldSupplyExtraction = oliveSupplyForExtractionRepository.findById(oSupplyForExtractId).get();
         OliveHarvest oldHarvest = oliveHarvestRepository.findById(harvestId).get();
         oldSupplyExtraction.setOliveHarvest(oldHarvest);
         oldSupplyExtraction.setSupplyId(oSupplyForExtraction.getSupplyId());
@@ -46,12 +46,12 @@ public class OliveSupplyForExtractionServiceImpl implements OliveSupplyForExtrac
     }
 
     @Override
-    public List<com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction> getoSupplyForExtracts() {
+    public List<OliveSupplyForExtraction> geToSupplyForExtracts() {
         return oliveSupplyForExtractionRepository.findAll();
     }
 
     @Override
-    public com.Oil4Med.Oil4Med.Model.OliveSupplyForExtraction getOSupplyForExtractById(Long oSupplyForExtractId) {
+    public OliveSupplyForExtraction getOSupplyForExtractById(Long oSupplyForExtractId) {
         return oliveSupplyForExtractionRepository.findById(oSupplyForExtractId).orElse(null);
     }
 }

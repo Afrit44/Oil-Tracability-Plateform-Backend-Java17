@@ -53,6 +53,9 @@ public class OilProduct {
     @Column(name = "packaging_state")
     private boolean isPacked;
 
+    @Column(name = "is_For_Sale")
+    private boolean isForSale;
+
     @ManyToOne
     @JoinColumn(name = "productionBatchId",nullable = false,referencedColumnName = "productionBatchId")
     private OilProductionBatch oilProductionBatch;

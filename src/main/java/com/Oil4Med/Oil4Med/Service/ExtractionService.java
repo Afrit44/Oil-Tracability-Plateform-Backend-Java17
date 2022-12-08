@@ -15,6 +15,6 @@ public interface ExtractionService {
 
     void deleteExtraction(Extraction extraction);
 
-    void updateExtraction(Extraction extraction, Extraction newExtraction);
+    void updateExtraction(Long extractionId, Extraction newExtraction);
 
 }

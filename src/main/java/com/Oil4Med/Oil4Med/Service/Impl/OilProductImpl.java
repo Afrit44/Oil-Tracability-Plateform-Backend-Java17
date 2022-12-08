@@ -54,6 +54,7 @@ public class OilProductImpl implements OilProductService {
         oilProductFromDB.setOilProductState(oilProduct.getOilProductState());
         oilProductFromDB.setStored(oilProduct.isStored());
         oilProductFromDB.setPacked(oilProduct.isPacked());
+        oilProductFromDB.setForSale(oilProduct.isForSale());
         oilProductRepository.save(oilProductFromDB);
     }
 }

@@ -36,7 +36,8 @@ public class ExtractionImpl implements ExtractionService {
     }
 
     @Override
-    public void updateExtraction(Extraction extraction, Extraction newExtraction) {
+    public void updateExtraction(Long extractionId, Extraction newExtraction) {
+        Extraction extraction = extractionRepository.findById(extractionId).get();
         extraction.setExtractionStatus(newExtraction.getExtractionStatus());
         extraction.setStartDate(newExtraction.getStartDate());
         extraction.setFinishDate(newExtraction.getFinishDate());

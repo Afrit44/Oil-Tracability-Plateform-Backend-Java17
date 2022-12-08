@@ -19,7 +19,7 @@ public class Extraction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "extraction_id", nullable = false)
+    @Column(name = "extractionId", nullable = false)
     private Long extractionId;
 
     @Column(name = "status")

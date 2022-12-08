@@ -12,6 +12,9 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Temperature {
+
     private Date date;
+
     private float value;
+
 }

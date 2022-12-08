@@ -16,7 +16,7 @@ public class Tank {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "tank_id", nullable = false)
+    @Column(name = "tankId", nullable = false)
     private Long tankId;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "tank")

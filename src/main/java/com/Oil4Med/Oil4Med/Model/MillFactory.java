@@ -18,7 +18,7 @@ public class MillFactory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "mill_id", nullable = false)
+    @Column(name = "millId", nullable = false)
     private Long millId;
 
     @Column(name="mill_Name")

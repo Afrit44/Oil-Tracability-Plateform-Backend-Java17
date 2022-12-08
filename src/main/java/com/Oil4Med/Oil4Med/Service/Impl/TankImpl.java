@@ -41,7 +41,6 @@ public class TankImpl implements TankService {
     @Override
     public void updateTank(Long id, Tank tank) {
         Tank tankFromBD = tankRepository.findById(id).get();
-        tankFromBD.setMachineId(tank.getMachineId());
         tankRepository.save(tankFromBD);
     }
 }

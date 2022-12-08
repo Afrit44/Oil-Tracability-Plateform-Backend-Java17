@@ -38,7 +38,6 @@ public class PurchaseHarvestImpl implements PurchaseHarvestService {
     public void updatePurchaseHarvest(Long id, PurchaseHarvest purchaseHarvest) {
         PurchaseHarvest purchaseHarvestFromDB = purchaseHarvestRepository.findById(id).get();
         purchaseHarvestFromDB.setPurchaseHId(purchaseHarvest.getPurchaseHId());
-        purchaseHarvestFromDB.setHarvestId(purchaseHarvest.getHarvestId());
         purchaseHarvestFromDB.setBuyerId(purchaseHarvest.getBuyerId());
         purchaseHarvestFromDB.setQuantity(purchaseHarvest.getQuantity());
         purchaseHarvestRepository.save(purchaseHarvestFromDB);

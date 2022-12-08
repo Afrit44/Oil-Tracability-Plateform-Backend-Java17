@@ -42,7 +42,6 @@ public class OilProductImpl implements OilProductService {
     public void updateOilProduct(Long id, OilProduct oilProduct) {
         OilProduct oilProductFromDB = oilProductRepository.findById(id).get();
         oilProductFromDB.setOilProductId(oilProductFromDB.getOilProductId());
-        oilProductFromDB.setProductionId(oilProductFromDB.getProductionId());
         oilProductFromDB.setOilClass(oilProduct.getOilClass());
         oilProductFromDB.setAnalysisQuality1(oilProduct.getAnalysisQuality1());
         oilProductFromDB.setAnalysisQuality2(oilProduct.getAnalysisQuality2());

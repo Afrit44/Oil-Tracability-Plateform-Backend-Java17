@@ -117,7 +117,8 @@ public class MillFactoryImpl implements MillFactoryService {
     }
 
     @Override
-    public PurchaseOil purchaseOilFromFarmer(Farmer farmer, OilProduct oilProduct, double weight, MillFactory millFactory, double price) {
+    public PurchaseOil purchaseOilFromFarmer(Farmer farmer, OilProduct oilProduct, double weight,
+                                             MillFactory millFactory, double price) {
         //Subtract the quantity bought by the consumer from the farmer and update it in database
         oilProduct.setOilQuantity(oilProduct.getOilQuantity()-weight);
         oilProductService.updateOilProduct(oilProduct.getOilProductId(),oilProduct);

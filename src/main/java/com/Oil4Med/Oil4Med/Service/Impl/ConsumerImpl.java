@@ -3,6 +3,7 @@ package com.Oil4Med.Oil4Med.Service.Impl;
 import com.Oil4Med.Oil4Med.Model.*;
 import com.Oil4Med.Oil4Med.Model.Enum.Buyer;
 import com.Oil4Med.Oil4Med.Model.Enum.Seller;
+import com.Oil4Med.Oil4Med.Model.Types.OilTraceability;
 import com.Oil4Med.Oil4Med.Repository.ConsumerRepository;
 import com.Oil4Med.Oil4Med.Service.ConsumerService;
 import com.Oil4Med.Oil4Med.Service.OilProductService;
@@ -93,7 +94,72 @@ public class ConsumerImpl implements ConsumerService {
     }
 
     @Override
-    public void checkTraceability() {
-        //This one need a very GOOD discussion.
+    public OilTraceability checkTraceability(OilProduct oilProduct) {
+
+        OilTraceability oilTraceability = new OilTraceability();
+
+        //Setting oilProductId
+        oilTraceability.setOilProductId(oilProduct.getOilProductId());
+
+        //Setting oilProductionBatchId
+        OilProductionBatch oilProductionBatch = oilProduct.getOilProductionBatch();
+        oilTraceability.setOilProductionBatchId(oilProductionBatch.getProductionBatchId());
+
+        //Setting extractionId
+        Extraction extraction = oilProductionBatch.getExtraction();
+        oilTraceability.setExtractionId(extraction.getExtractionId());
+
+        //Setting Machine List via link with extraction
+        List<Machine> machineList = extraction.getMachinesList();
+        List<Long> machineListId = new ArrayList<>();
+        for (Machine machine : machineList){
+            machineListId.add(machine.getMachineId());
+        }
+        oilTraceability.setMachineIdList(machineListId);
+
+        //Setting MillFactory
+        MillFactory millFactory = machineList.get(0).getMillFactory();
+        oilTraceability.setMillFactoryId(millFactory.getMillId());
+
+
+        //Setting OliveSupply
+        List<OliveSupplyForExtraction> oliveSupplyForExtractionList = extraction.getOliveSupplyForExtractionList();
+        List<Long> oSupplyFEIdList = new ArrayList<>();
+        for(OliveSupplyForExtraction oliveSupplyForExtraction : oliveSupplyForExtractionList){
+            oSupplyFEIdList.add(oliveSupplyForExtraction.getSupplyId());
+        }
+        oilTraceability.setOliveSupplyForExtractionIdList(oSupplyFEIdList);
+
+        //Setting oliveHarvest
+        List<OliveHarvest> oliveHarvestList = new ArrayList<>();
+        List<Long> oliveHarvestIdList = new ArrayList<>();
+        for (OliveSupplyForExtraction oliveSupplyForExtraction : oliveSupplyForExtractionList){
+            oliveHarvestList.add(oliveSupplyForExtraction.getOliveHarvest());
+            oliveHarvestIdList.add(oliveSupplyForExtraction.getOliveHarvest().getHarvestId());
+        }
+        oilTraceability.setOliveHarvestId(oliveHarvestIdList);
+
+        //Setting oliveGrove
+        List<OliveGrove> oliveGroveList = new ArrayList<>();
+        List<Long> olivGroveIdList = new ArrayList<>();
+        for (OliveHarvest oliveHarvest : oliveHarvestList){
+            oliveGroveList.add(oliveHarvest.getOliveGrove());
+            oliveHarvestIdList.add(oliveHarvest.getOliveGrove().getGroveId());
+        }
+        oilTraceability.setOliveHarvestId(oliveHarvestIdList);
+
+        //Setting Farmer
+        List<Farmer> farmerList = new ArrayList<>();
+        List<Long> farmerIdList = new ArrayList<>();
+        for (OliveGrove oliveGrove : oliveGroveList){
+            farmerList.add(oliveGrove.getFarmer());
+            oliveHarvestIdList.add(oliveGrove.getFarmer().getFarmerId());
+        }
+        oilTraceability.setOliveHarvestId(farmerIdList);
+
+        //We don't have to save the entity into the database
+        return oilTraceability;
     }
+
+
 }

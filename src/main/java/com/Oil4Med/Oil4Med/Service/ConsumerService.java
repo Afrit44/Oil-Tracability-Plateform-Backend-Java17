@@ -1,6 +1,7 @@
 package com.Oil4Med.Oil4Med.Service;
 
 import com.Oil4Med.Oil4Med.Model.*;
+import com.Oil4Med.Oil4Med.Model.Types.OilTraceability;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface ConsumerService {
     void updateConsumer(Long consumerId, Consumer newConsumer);
     PurchaseOil purchaseOilFromFarmer(Consumer consumer, Farmer farmer,OilProduct oilProduct, double quantity, double price);
     PurchaseOil purchaseOilFromMill(MillFactory millFactory, OilProduct oilProduct, double quantity, double price, Consumer consumer);
-    void checkTraceability();
+    OilTraceability checkTraceability(OilProduct oilProduct);
 
 
 }

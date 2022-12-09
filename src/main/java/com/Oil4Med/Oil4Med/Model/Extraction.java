@@ -48,7 +48,7 @@ public class Extraction {
 
     @ManyToMany
 //    @JoinColumn(name="machines_id")
-    private Set<Machine> machines;
+    private List<Machine> machinesList;
 
     @OneToOne(cascade = CascadeType.ALL,mappedBy = "extraction")
     private OilProductionBatch oilProductionBatch;

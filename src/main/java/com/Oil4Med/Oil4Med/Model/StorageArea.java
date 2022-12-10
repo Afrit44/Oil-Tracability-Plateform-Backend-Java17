@@ -43,7 +43,7 @@ public class StorageArea {
     @Column(name = "address")
     private Address address;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "storageArea")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "storageArea")
     private List<OilProduct> listOfOilProduct;
 
 }

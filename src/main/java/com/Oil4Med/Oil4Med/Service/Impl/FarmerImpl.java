@@ -62,7 +62,7 @@ public class FarmerImpl implements FarmerService {
             throw new RuntimeException();
         }
         oliveHarvest.setQuantity(oliveHarvest.getQuantity()-weight);
-        oliveHarvestService.updateOliveHarvest(oliveHarvest.getGroveId(), oliveHarvest.getHarvestId(),oliveHarvest);
+        oliveHarvestService.updateOliveHarvest(oliveHarvest.getOliveGrove().getGroveId(), oliveHarvest.getHarvestId(),oliveHarvest);
         //Creating the olive Supply as it was transported from harvest to the mill in order to be extracted
         OliveSupplyForExtraction oliveSupplyForExtraction = new OliveSupplyForExtraction();
         oliveSupplyForExtraction.setWeight(weight);
@@ -79,7 +79,7 @@ public class FarmerImpl implements FarmerService {
     @Override
     public void setIntentionToSellOlive(OliveHarvest oliveHarvest) {
         oliveHarvest.setHarvestForSale(true);
-        oliveHarvestService.updateOliveHarvest(oliveHarvest.getGroveId(),oliveHarvest.getHarvestId(),oliveHarvest);
+        oliveHarvestService.updateOliveHarvest(oliveHarvest.getOliveGrove().getGroveId(),oliveHarvest.getHarvestId(),oliveHarvest);
     }
 
     @Override

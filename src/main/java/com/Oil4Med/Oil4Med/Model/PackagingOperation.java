@@ -20,7 +20,7 @@ public class PackagingOperation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "packaging_id", nullable = false)
+    @Column(name = "packagingId", nullable = false)
     private Long packagingId;
 
     @Column(name = "packaging_date")

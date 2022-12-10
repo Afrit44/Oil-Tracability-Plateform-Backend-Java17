@@ -1,42 +1,85 @@
-//package com.Oil4Med.Oil4Med.DTO;
-//
-//import com.Oil4Med.Oil4Med.Model.Consumer;
-//import lombok.AllArgsConstructor;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-//import lombok.experimental.SuperBuilder;
-//
-//@SuperBuilder
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
-//public class MillFactoryDTO {
-//
-//
-//
-//    public static MillFactoryDTO fromEntity(Consumer consumer) {
-//
-//        if (consumer == null) {
-//            //TODO throw an exception
-//        }
-//
-//        return MillFactoryDTO.builder()
-//                .firstName(consumer.getFirstName())
-//                .lastName(consumer.getLastName())
-//                .email(consumer.getEmail())
-//                .build();
-//    }
-//
-//    public static Consumer toEntity(MillFactoryDTO consumerDTO) {
-//
-//        if (consumerDTO == null) {
-//            //TODO throw an exception
-//        }
-//
-//        Consumer consumer = new Consumer();
-//        consumer.setFirstName(consumerDTO.getFirstName());
-//        consumer.setLastName(consumerDTO.getLastName());
-//        consumer.setEmail(consumerDTO.getEmail());
-//        return consumer;
-//    }
-//}
+package com.Oil4Med.Oil4Med.DTO;
+
+import com.Oil4Med.Oil4Med.Model.Consumer;
+import com.Oil4Med.Oil4Med.Model.Enum.StoringMean;
+import com.Oil4Med.Oil4Med.Model.MillFactory;
+import com.Oil4Med.Oil4Med.Model.Types.Address;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
+@SuperBuilder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class MillFactoryDTO {
+
+
+    private String millName;
+
+    private String email;
+
+    private Address address;
+
+    private int yearOfCreation;
+
+    private double millingCapacity;
+
+    private StoringMean storingMean;
+
+    private String managerName;
+
+    private double numberOfMachines;
+
+    private String phoneNumber;
+
+    private String fax;
+
+    private String website;
+
+
+    public static MillFactoryDTO fromEntity(MillFactory millFactory) {
+
+        if (millFactory == null) {
+            //TODO throw an exception
+        }
+
+        return MillFactoryDTO.builder()
+                .millName(millFactory.getMillName())
+                .email(millFactory.getEmail())
+                .address(millFactory.getAddress())
+                .yearOfCreation(millFactory.getYearOfCreation())
+                .millingCapacity(millFactory.getMillingCapacity())
+                .storingMean(millFactory.getStoringMean())
+                .managerName(millFactory.getManagerName())
+                .numberOfMachines(millFactory.getNumberOfMachines())
+                .phoneNumber(millFactory.getPhoneNumber())
+                .fax(millFactory.getFax())
+                .website(millFactory.getWebsite())
+                .build();
+    }
+
+    public static MillFactory toEntity(MillFactoryDTO millFactoryDTO) {
+
+        if (millFactoryDTO == null) {
+            //TODO throw an exception
+        }
+
+        MillFactory millFactory = new MillFactory();
+        millFactory.setMillName(millFactoryDTO.getMillName());
+        millFactory.setEmail(millFactoryDTO.getEmail());
+        millFactory.setAddress(millFactoryDTO.getAddress());
+        millFactory.setYearOfCreation(millFactoryDTO.getYearOfCreation());
+        millFactory.setMillingCapacity(millFactoryDTO.getMillingCapacity());
+        millFactory.setStoringMean(millFactoryDTO.getStoringMean());
+        millFactory.setManagerName(millFactoryDTO.getManagerName());
+        millFactory.setNumberOfMachines(millFactoryDTO.getNumberOfMachines());
+        millFactory.setPhoneNumber(millFactoryDTO.getPhoneNumber());
+        millFactory.setFax(millFactoryDTO.getFax());
+        millFactory.setWebsite(millFactoryDTO.getWebsite());
+        return millFactory;
+    }
+}

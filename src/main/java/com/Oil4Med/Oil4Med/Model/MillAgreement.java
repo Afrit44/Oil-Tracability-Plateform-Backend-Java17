@@ -16,7 +16,7 @@ public class MillAgreement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "mill_agreement_id", nullable = false)
+    @Column(name = "millAgreementId", nullable = false)
     private Long millAgreementId;
 
     @Column(name = "olive_quantity")

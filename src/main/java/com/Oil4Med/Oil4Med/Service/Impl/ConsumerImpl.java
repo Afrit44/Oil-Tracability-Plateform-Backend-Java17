@@ -101,6 +101,11 @@ public class ConsumerImpl implements ConsumerService {
         //Setting oilProductId
         oilTraceability.setOilProductId(oilProduct.getOilProductId());
 
+        //Checking if the Oil Has been stocked, If yes then we Set the StorageArea Id
+        if (oilProduct.isStored()){
+            oilTraceability.setStorageAreaId(oilProduct.getStorageArea().getStorageAreaId());
+        }
+
         //Setting oilProductionBatchId
         OilProductionBatch oilProductionBatch = oilProduct.getOilProductionBatch();
         oilTraceability.setOilProductionBatchId(oilProductionBatch.getProductionBatchId());

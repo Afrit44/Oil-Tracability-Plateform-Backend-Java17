@@ -17,7 +17,7 @@ public class OliveSupplyForExtraction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "supply_id", nullable = false)
+    @Column(name = "supplyId", nullable = false)
     private Long supplyId;
 
     @Column(name = "weight")

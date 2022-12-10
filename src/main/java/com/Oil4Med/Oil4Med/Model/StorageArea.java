@@ -22,7 +22,7 @@ public class StorageArea {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "storage_area_id", nullable = false)
+    @Column(name = "storageAreaId", nullable = false)
     private Long storageAreaId;
 
     @Column(name = "owner")

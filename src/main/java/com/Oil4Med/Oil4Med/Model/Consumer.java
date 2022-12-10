@@ -15,7 +15,7 @@ import java.util.List;
 public class Consumer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "consumer_id", nullable = false)
+    @Column(name = "consumerId", nullable = false)
     private Long consumerId;
 
     @Column(name="firstName")

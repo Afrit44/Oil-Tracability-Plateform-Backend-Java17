@@ -19,11 +19,11 @@ public class OliveHarvest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "harvest_id", nullable = false)
+    @Column(name = "harvestId", nullable = false)
     private Long harvestId;
 
-    @Column(name = "grove_id", nullable = false)
-    private Long groveId;
+//    @Column(name = "grove_id", nullable = false)
+//    private Long groveId;
 
     @Column(name = "harvesting_date")
     private Date harvestingDate;

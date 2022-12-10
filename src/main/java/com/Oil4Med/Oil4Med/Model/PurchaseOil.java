@@ -18,7 +18,7 @@ public class PurchaseOil {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "purchase_id", nullable = false)
+    @Column(name = "purchaseOilId", nullable = false)
     private Long purchaseId;
 
     @Column(name = "buyer_id", nullable = false)

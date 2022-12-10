@@ -17,7 +17,7 @@ public class OilProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "oil_product_id", nullable = false)
+    @Column(name = "oilProductId", nullable = false)
     private Long oilProductId;
 
     @Column(name = "oil_class")
@@ -55,6 +55,7 @@ public class OilProduct {
 
     @Column(name = "is_For_Sale")
     private boolean isForSale;
+
 
     @ManyToOne
     @JoinColumn(name = "productionBatchId",nullable = false,referencedColumnName = "productionBatchId")

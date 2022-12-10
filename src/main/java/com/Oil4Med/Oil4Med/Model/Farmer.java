@@ -16,7 +16,7 @@ import java.util.List;
 public class Farmer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "farmer_id", nullable = false)
+    @Column(name = "farmerId", nullable = false)
     private Long farmerId;
 
     @Column(name="firstName")

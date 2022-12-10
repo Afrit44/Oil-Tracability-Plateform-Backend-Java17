@@ -20,7 +20,7 @@ public class OliveGrove {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "grove_id", nullable = false)
+    @Column(name = "groveId", nullable = false)
     private Long groveId;
 
     @Embedded

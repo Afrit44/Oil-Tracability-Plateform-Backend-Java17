@@ -88,7 +88,7 @@ public class MillFactoryImpl implements MillFactoryService {
         extraction.setPressTemperature(pressTemperature);
         extraction.setFiltration(filtration);
         extraction.getOliveSupplyForExtractionList().add(oliveSupplyForExtraction);
-        extraction.getMachines().add(machine);
+        extraction.getMachinesList().add(machine);
         extraction.getMillAgreementList().add(millAgreement);
         extraction=extractionService.addExtraction(extraction);
         //Link extraction with the initial oliveSupply
@@ -103,7 +103,7 @@ public class MillFactoryImpl implements MillFactoryService {
 
         //Creation of the new oilProductionBatch
         OilProductionBatch oilProductionBatch = new OilProductionBatch();
-        oilProductionBatch.setExtractionId(extraction.getExtractionId());
+//        oilProductionBatch.setExtractionId(extraction.getExtractionId());
         oilProductionBatch.setAnalysisType(analysisType);
         oilProductionBatch.setProductionForSale(isForSale);
         oilProductionBatch.setOilQuantity(oilQuantity);

@@ -17,7 +17,7 @@ public class Machine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "machine_id", nullable = false)
+    @Column(name = "machineId", nullable = false)
     private Long machineId;
 
     @Column(name="marque")

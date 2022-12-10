@@ -1,16 +1,36 @@
 package com.Oil4Med.Oil4Med.Model.Types;
 
-import com.Oil4Med.Oil4Med.Model.OilProduct;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Embeddable
-public class oilTraceability {
+public class OilTraceability {
 
+    Long oilProductId;
+
+    Long storageAreaId;
+
+    Long oilProductionBatchId;
+
+    Long extractionId;
+
+    Long millFactoryId;
+
+    List<Long> machineIdList;
+
+    List<Long> oliveSupplyForExtractionIdList;
+
+    List<Long> oliveHarvestId;
+
+    List<Long> oliveGroveId;
+
+    List<Long> farmerId;
 
 }

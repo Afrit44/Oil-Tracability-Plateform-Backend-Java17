@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="PackagingOperation")
-public class PackagingOperation {
+public class PackagingOperation implements Serializable  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

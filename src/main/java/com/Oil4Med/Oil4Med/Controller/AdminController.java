@@ -4,10 +4,8 @@ import com.Oil4Med.Oil4Med.DTO.AdminDTO;
 import com.Oil4Med.Oil4Med.DTO.ConsumerDTO;
 import com.Oil4Med.Oil4Med.DTO.FarmerDTO;
 import com.Oil4Med.Oil4Med.DTO.MillFactoryDTO;
-import com.Oil4Med.Oil4Med.Model.Admin;
-import com.Oil4Med.Oil4Med.Model.Consumer;
-import com.Oil4Med.Oil4Med.Model.Farmer;
-import com.Oil4Med.Oil4Med.Model.MillFactory;
+import com.Oil4Med.Oil4Med.Model.*;
+import com.Oil4Med.Oil4Med.Model.Types.OilTraceability;
 import com.Oil4Med.Oil4Med.Service.AdminService;
 import com.Oil4Med.Oil4Med.Service.ConsumerService;
 import com.Oil4Med.Oil4Med.Service.FarmerService;
@@ -146,6 +144,20 @@ public class AdminController {
     }
 
     //Rest of Admin functions
+    @GetMapping("/purchaseOilFromFarmer")
+    public PurchaseOil purchaseOilFromFarmer(Consumer consumer, Farmer farmer, OilProduct oilProduct, double quantity, double price) {
+        return consumerService.purchaseOilFromFarmer(consumer,farmer,oilProduct,quantity,price);
+    }
+
+    @GetMapping("/purchaseOilFromMill")
+    public PurchaseOil purchaseOilFromMill(MillFactory millFactory, OilProduct oilProduct, double quantity, double price, Consumer consumer) {
+        return consumerService.purchaseOilFromMill(millFactory,oilProduct,quantity,price,consumer);
+    }
+
+    @GetMapping("/checkTraceability")
+    public OilTraceability checkTraceability(OilProduct oilProduct) {
+        return consumerService.checkTraceability(oilProduct);
+    }
     @PostMapping("/addOliveRegion")
     public void addOliveRegion() {
         adminService.addOliveRegion();

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class MillAgreementImpl implements MillAgreementService {
 
@@ -52,7 +53,7 @@ public class MillAgreementImpl implements MillAgreementService {
         millAgreementFromDb.setMillOlive(millAgreement.isMillOlive());
         millAgreementFromDb.setSellOlive(millAgreement.isSellOlive());
         millAgreementFromDb.setProcessingDate(millAgreement.getProcessingDate());
-        millAgreementFromDb.setStorageArea(millAgreement.getStorageArea());
+//        millAgreementFromDb.setStorageArea(millAgreement.getStorageArea());
         millAgreementRepository.save(millAgreementFromDb);
     }
 }

@@ -15,6 +15,8 @@ public class OilTraceability {
 
     Long oilProductId;
 
+    Long packagingOperationId;
+
     Long storageAreaId;
 
     Long oilProductionBatchId;

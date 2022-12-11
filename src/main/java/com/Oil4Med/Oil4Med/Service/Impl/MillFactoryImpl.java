@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 @Service
 public class MillFactoryImpl implements MillFactoryService {
     @Autowired
@@ -76,7 +75,7 @@ public class MillFactoryImpl implements MillFactoryService {
 
     @Override
     public Extraction processingHarvest(OliveSupplyForExtraction oliveSupplyForExtraction, MillAgreement millAgreement,
-                                        Machine machine, Tank tank, Date start_date, Date finishDate,
+                                        Machine machine, Date start_date, Date finishDate,
                                         double waterPer100kg, double averageMixingTime, double pressTemperature,
                                         boolean filtration) {
 

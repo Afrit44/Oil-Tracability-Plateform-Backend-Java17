@@ -37,7 +37,4 @@ public class Machine implements Serializable {
     @JoinColumn(name = "millId",nullable = false,referencedColumnName = "millId")
     private MillFactory millFactory;
 
-    @ManyToOne
-    @JoinColumn(name = "tankId",nullable = false,referencedColumnName = "tankId")
-    private Tank tank;
 }

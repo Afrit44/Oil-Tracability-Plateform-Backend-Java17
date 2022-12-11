@@ -72,7 +72,7 @@ public class MillFactory implements Serializable {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "millFactory")
     private List<Machine> machines;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "tanksMillFactory")
-    private List<Tank> tanksRelatedToMill;
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "millFactory")
+    private MillManager millManager;
 
 }

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
@@ -13,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="OilProduct")
-public class OilProduct {
+public class OilProduct implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -68,8 +69,8 @@ public class OilProduct {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "oilProduct")
     private List<PurchaseOil> purchaseOilList;
 
-    @ManyToOne
-    @JoinColumn(name = "storageAreaId",nullable = false,referencedColumnName = "storageAreaId")
-    private StorageArea storageArea;
+//    @ManyToOne
+//    @JoinColumn(name = "storageAreaId",nullable = false,referencedColumnName = "storageAreaId")
+//    private StorageArea storageArea;
 
 }

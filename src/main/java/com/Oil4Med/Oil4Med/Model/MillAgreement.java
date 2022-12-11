@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
@@ -12,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "MillAgreement")
-public class MillAgreement {
+public class MillAgreement implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,8 +38,8 @@ public class MillAgreement {
     @Column(name = "processing_date")
     private Date processingDate;
     //why???
-    @Column(name = "storage_area")
-    private StorageArea storageArea;
+//    @Column(name = "storage_area")
+//    private StorageArea storageArea;
     //why???
     @Column(name = "harvest_id", nullable = false)
     private Long harvestId;

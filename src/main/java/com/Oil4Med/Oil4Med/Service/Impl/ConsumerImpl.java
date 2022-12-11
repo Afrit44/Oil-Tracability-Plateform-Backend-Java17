@@ -9,10 +9,12 @@ import com.Oil4Med.Oil4Med.Service.ConsumerService;
 import com.Oil4Med.Oil4Med.Service.OilProductService;
 import com.Oil4Med.Oil4Med.Service.PurchaseOilService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class ConsumerImpl implements ConsumerService {
 
     @Autowired
@@ -101,10 +103,19 @@ public class ConsumerImpl implements ConsumerService {
         //Setting oilProductId
         oilTraceability.setOilProductId(oilProduct.getOilProductId());
 
-        //Checking if the Oil Has been stocked, If yes then we Set the StorageArea Id
-        if (oilProduct.isStored()){
-            oilTraceability.setStorageAreaId(oilProduct.getStorageArea().getStorageAreaId());
+        //Checking if the Oil Has been packaged, If yes then we Set the packagingOperationId
+        if (oilProduct.isPacked()){
+            oilTraceability.setPackagingOperationId(oilProduct.getPackagingOperation().getPackagingId());
+        }else{
+            oilTraceability.setStorageAreaId(null);
         }
+
+//        //Checking if the Oil Has been stocked, If yes then we Set the StorageAreaId
+//        if (oilProduct.isStored()){
+//            oilTraceability.setStorageAreaId(oilProduct.getStorageArea().getStorageAreaId());
+//        }else{
+//            oilTraceability.setStorageAreaId(null);
+//        }
 
         //Setting oilProductionBatchId
         OilProductionBatch oilProductionBatch = oilProduct.getOilProductionBatch();
@@ -146,18 +157,16 @@ public class ConsumerImpl implements ConsumerService {
 
         //Setting oliveGrove
         List<OliveGrove> oliveGroveList = new ArrayList<>();
-        List<Long> olivGroveIdList = new ArrayList<>();
+        List<Long> oliveGroveIdList = new ArrayList<>();
         for (OliveHarvest oliveHarvest : oliveHarvestList){
             oliveGroveList.add(oliveHarvest.getOliveGrove());
-            oliveHarvestIdList.add(oliveHarvest.getOliveGrove().getGroveId());
+            oliveGroveIdList.add(oliveHarvest.getOliveGrove().getGroveId());
         }
-        oilTraceability.setOliveHarvestId(oliveHarvestIdList);
+        oilTraceability.setOliveHarvestId(oliveGroveIdList);
 
         //Setting Farmer
-        List<Farmer> farmerList = new ArrayList<>();
         List<Long> farmerIdList = new ArrayList<>();
         for (OliveGrove oliveGrove : oliveGroveList){
-            farmerList.add(oliveGrove.getFarmer());
             oliveHarvestIdList.add(oliveGrove.getFarmer().getFarmerId());
         }
         oilTraceability.setOliveHarvestId(farmerIdList);

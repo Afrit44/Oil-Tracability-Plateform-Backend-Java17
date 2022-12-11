@@ -4,10 +4,12 @@ import com.Oil4Med.Oil4Med.Model.PurchaseHarvest;
 import com.Oil4Med.Oil4Med.Repository.PurchaseHarvestRepository;
 import com.Oil4Med.Oil4Med.Service.PurchaseHarvestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class PurchaseHarvestImpl implements PurchaseHarvestService {
 
     @Autowired

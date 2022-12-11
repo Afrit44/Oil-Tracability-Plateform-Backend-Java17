@@ -13,8 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 public class Humidity {
 
-    private Date date;
+    private Date dateHumidity;
 
-    private float value;
+    private float valueHumidity;
 
 }

@@ -38,8 +38,8 @@ public class MillAgreement implements Serializable {
     @Column(name = "processing_date")
     private Date processingDate;
     //why???
-    @Column(name = "storage_area")
-    private StorageArea storageArea;
+//    @Column(name = "storage_area")
+//    private StorageArea storageArea;
     //why???
     @Column(name = "harvest_id", nullable = false)
     private Long harvestId;

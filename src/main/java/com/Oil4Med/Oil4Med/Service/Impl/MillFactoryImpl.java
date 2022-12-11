@@ -9,11 +9,13 @@ import com.Oil4Med.Oil4Med.Repository.MillFactoryRepository;
 import com.Oil4Med.Oil4Med.Repository.OliveSupplyForExtractionRepository;
 import com.Oil4Med.Oil4Med.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class MillFactoryImpl implements MillFactoryService {
     @Autowired
     MillFactoryRepository millFactoryRepository;

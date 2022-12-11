@@ -5,10 +5,11 @@ import com.Oil4Med.Oil4Med.Model.Extraction;
 import com.Oil4Med.Oil4Med.Repository.ExtractionRepository;
 import com.Oil4Med.Oil4Med.Service.ExtractionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class ExtractionImpl implements ExtractionService {
 
     @Autowired

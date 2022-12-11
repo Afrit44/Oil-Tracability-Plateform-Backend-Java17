@@ -4,11 +4,13 @@ import com.Oil4Med.Oil4Med.Model.Tank;
 import com.Oil4Med.Oil4Med.Repository.TankRepository;
 import com.Oil4Med.Oil4Med.Service.TankService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class TankImpl implements TankService {
     @Autowired
     TankRepository tankRepository;

@@ -69,8 +69,8 @@ public class OilProduct implements Serializable {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "oilProduct")
     private List<PurchaseOil> purchaseOilList;
 
-    @ManyToOne
-    @JoinColumn(name = "storageAreaId",nullable = false,referencedColumnName = "storageAreaId")
-    private StorageArea storageArea;
+//    @ManyToOne
+//    @JoinColumn(name = "storageAreaId",nullable = false,referencedColumnName = "storageAreaId")
+//    private StorageArea storageArea;
 
 }

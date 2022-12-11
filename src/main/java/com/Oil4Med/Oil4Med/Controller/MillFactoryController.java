@@ -8,4 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping("/api/oil4med/MillFactory/")
 public class MillFactoryController {
+
 }

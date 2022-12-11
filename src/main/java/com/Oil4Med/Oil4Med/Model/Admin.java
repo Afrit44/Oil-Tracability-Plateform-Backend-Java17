@@ -39,6 +39,9 @@ public class Admin implements Serializable {
     private List<Consumer> consumers;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "admin")
+    private List<MillManager> millManagerList;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "admin")
     private List<MillFactory> mills;
 
 }

@@ -4,10 +4,11 @@ import com.Oil4Med.Oil4Med.Model.StorageArea;
 import com.Oil4Med.Oil4Med.Repository.StorageAreaRepository;
 import com.Oil4Med.Oil4Med.Service.StorageAreaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class StorageAreaImpl implements StorageAreaService {
 
     @Autowired

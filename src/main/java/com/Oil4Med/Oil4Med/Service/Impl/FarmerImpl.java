@@ -7,10 +7,11 @@ import com.Oil4Med.Oil4Med.Service.OilProductService;
 import com.Oil4Med.Oil4Med.Service.OliveHarvestService;
 import com.Oil4Med.Oil4Med.Service.OliveSupplyForExtractionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class FarmerImpl implements FarmerService {
 
     @Autowired

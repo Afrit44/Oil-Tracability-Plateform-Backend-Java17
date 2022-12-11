@@ -4,10 +4,11 @@ import com.Oil4Med.Oil4Med.Model.PurchaseOil;
 import com.Oil4Med.Oil4Med.Repository.PurchaseOilRepository;
 import com.Oil4Med.Oil4Med.Service.PurchaseOilService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class PurchaseOilImpl implements PurchaseOilService {
 
     @Autowired

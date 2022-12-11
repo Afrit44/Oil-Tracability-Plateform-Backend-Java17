@@ -9,10 +9,11 @@ import com.Oil4Med.Oil4Med.Service.ConsumerService;
 import com.Oil4Med.Oil4Med.Service.OilProductService;
 import com.Oil4Med.Oil4Med.Service.PurchaseOilService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class ConsumerImpl implements ConsumerService {
 
     @Autowired

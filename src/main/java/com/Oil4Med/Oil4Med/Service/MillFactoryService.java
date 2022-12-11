@@ -16,7 +16,7 @@ public interface MillFactoryService {
     void deleteMillFactory(MillFactory millFactory);
     void updateMillFactory(Long id, MillFactory millFactory);
     Extraction processingHarvest(OliveSupplyForExtraction oliveSupplyForExtraction, MillAgreement millAgreement,
-                                 Machine machine, Tank tank, Date start_date, Date finishDate,
+                                 Machine machine, Date start_date, Date finishDate,
                                  double waterPer100kg, double averageMixingTime, double pressTemperature,
                                  boolean filtration);
     OilProductionBatch produceOil(Extraction extraction, AnalysisType analysisType, Boolean isForSale,

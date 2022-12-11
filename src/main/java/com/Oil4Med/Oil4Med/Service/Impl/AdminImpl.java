@@ -5,10 +5,11 @@ import com.Oil4Med.Oil4Med.Model.Machine;
 import com.Oil4Med.Oil4Med.Repository.AdminRepository;
 import com.Oil4Med.Oil4Med.Service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class AdminImpl implements AdminService {
 
     @Autowired

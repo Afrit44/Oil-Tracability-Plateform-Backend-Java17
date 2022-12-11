@@ -5,20 +5,19 @@ import com.Oil4Med.Oil4Med.Model.Types.Address;
 import com.Oil4Med.Oil4Med.Model.Types.Humidity;
 import com.Oil4Med.Oil4Med.Model.Types.Temperature;
 import jakarta.persistence.*;
+
+import java.io.Serializable;
+import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
-@Builder
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="StorageArea")
-public class StorageArea {
+public class StorageArea implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

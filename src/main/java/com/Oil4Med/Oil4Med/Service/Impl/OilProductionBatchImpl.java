@@ -1,5 +1,6 @@
 package com.Oil4Med.Oil4Med.Service.Impl;
 
+import com.Oil4Med.Oil4Med.Model.MillManager;
 import com.Oil4Med.Oil4Med.Model.OilProductionBatch;
 import com.Oil4Med.Oil4Med.Repository.OilProductionBatchRepository;
 import com.Oil4Med.Oil4Med.Service.OilProductionBatchService;
@@ -13,13 +14,20 @@ public class OilProductionBatchImpl implements OilProductionBatchService {
     @Autowired
     OilProductionBatchRepository oilProductionBatchRepository;
     @Override
-    public OilProductionBatch createOilProductionBatch(OilProductionBatch OilProductionBatch) {
-        return oilProductionBatchRepository.save(OilProductionBatch);
+    public OilProductionBatch createOilProductionBatch(OilProductionBatch oilProductionBatch) {
+        return oilProductionBatchRepository.save(oilProductionBatch);
     }
 
     @Override
-    public OilProductionBatch updateOilProductionBatch(OilProductionBatch OilProductionBatch) {
-        return oilProductionBatchRepository.save(OilProductionBatch);
+    public OilProductionBatch updateOilProductionBatch(Long oilProductionBatchId,OilProductionBatch oilProductionBatch) {
+        OilProductionBatch oilProductionBatchOld =oilProductionBatchRepository.findById(oilProductionBatchId).get();
+        oilProductionBatchOld.setOilQuantity(oilProductionBatch.getOilQuantity());
+        oilProductionBatchOld.setOwner(oilProductionBatch.getOwner());
+        oilProductionBatchOld.setPurchaseDate(oilProductionBatch.getPurchaseDate());
+        oilProductionBatchOld.setProductionForSale(oilProductionBatch.isProductionForSale());
+        oilProductionBatchOld.setAnalysisType(oilProductionBatch.getAnalysisType());
+
+        return oilProductionBatchRepository.save(oilProductionBatchOld);
     }
 
     @Override
